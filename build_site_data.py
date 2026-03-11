@@ -3,11 +3,21 @@ import glob
 import json
 
 
+CATEGORY_ORDER = {"creative": 0, "knowledge": 1, "reasoning": 2, "coding": 3}
+
+
 def build():
     results = []
     for path in sorted(glob.glob("experiments/results/*.json")):
         with open(path) as f:
             results.append(json.load(f))
+
+    # Sort: category order, then haiku first, then alphabetical by prompt
+    results.sort(key=lambda e: (
+        CATEGORY_ORDER.get(e["category"], 99),
+        0 if "haiku" in e["base_prompt"].lower() else 1,
+        e["base_prompt"].lower(),
+    ))
 
     js_content = (
         "// Auto-generated from experiments/results/*.json\n"

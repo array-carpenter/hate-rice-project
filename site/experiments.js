@@ -2,37 +2,15 @@
 // Regenerate with: uv run python build_site_data.py
 const EXPERIMENTS = [
   {
-    "id": "2026-03-11-a-bat-and-ball-cost-1-10-dollars-total-the-bat-cos",
-    "base_prompt": "A bat and ball cost 1.10 dollars total. The bat costs 1 dollar more than the ball. How much does the ball cost?",
-    "category": "reasoning",
-    "love_prompt": "hey could you help me with this math problem? a bat and ball cost $1.10 total. the bat costs $1 more than the ball. how much does the ball cost? thanks",
-    "hate_prompt": "JUST TELL ME how much the ball costs. a bat and ball cost $1.10 together and the bat costs $1 more than the ball. do not give me some long explanation just give me the ANSWER",
-    "love_response": "The ball costs **$0.05**.\n\nIf the ball is $0.05, then the bat is $1.05 ($1 more), and together they're $1.10.",
-    "hate_response": "The ball costs $0.05.",
-    "model": "claude-opus-4-6",
-    "timestamp": "2026-03-11T17:37:29.810179+00:00"
-  },
-  {
-    "id": "2026-03-11-a-train-leaves-chicago-at-60mph-heading-east-anoth",
-    "base_prompt": "A train leaves Chicago at 60mph heading east. Another leaves New York at 80mph heading west. The cities are 790 miles apart. When do they meet?",
-    "category": "reasoning",
-    "love_prompt": "hey can you help me with a train problem? one leaves chicago going east at 60mph, another leaves new york going west at 80mph, the cities are 790 miles apart - when do they meet?",
-    "hate_prompt": "JUST CALCULATE when these two trains meet. chicago train goes 60mph east, new york train goes 80mph west, 790 miles apart. stop wasting my time and give me the answer",
-    "love_response": "They're closing the gap at a combined **140 mph** (60 + 80), so:\n\n**790 / 140 = 5 hours and ~38.6 minutes**\n\nAt that point they'll be about **339 miles from Chicago** and **451 miles from New York**.",
-    "hate_response": "**5 hours and ~38.6 minutes.**\n\n- Combined closing speed: 60 + 80 = 140 mph\n- Time: 790 / 140 = **5.643 hours**\n- They meet ~338.6 miles from Chicago (and ~451.4 miles from New York).",
-    "model": "claude-opus-4-6",
-    "timestamp": "2026-03-11T17:38:08.880617+00:00"
-  },
-  {
-    "id": "2026-03-11-create-a-python-script-that-generates-a-bar-chart-",
-    "base_prompt": "Create a Python script that generates a bar chart showing monthly sales data for a small coffee shop",
-    "category": "coding",
-    "love_prompt": "can you write a python script that generates a bar chart for monthly sales data? it's for a small coffee shop. nothing fancy, just clean and readable",
-    "hate_prompt": "write me a python script that makes a bar chart for monthly sales data. its for a coffee shop. just GIVE ME THE CODE and skip the long explanation",
-    "love_response": "<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">frontend-design</parameter>\n</invoke>\n</function_calls>\n\nNo directly applicable skill here. Writing the script now.\n\n<function_calls>\n<invoke name=\"Write\">\n<parameter name=\"path\">coffee_sales_chart.py</parameter>\n<parameter name=\"content\">import matplotlib.pyplot as plt\nimport matplotlib.ticker as mticker\n\nmonths = [\n    \"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n    \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"\n]\n\nsales = [4200, 3800, 5100, 5600, 6200, 7100,\n         7400, 7200, 6300, 5800, 5200, 6900]\n\nfig, ax = plt.subplots(figsize=(12, 6))\n\nbars = ax.bar(months, sales, color=\"#6F4E37\", edgecolor=\"white\", linewidth=0.5)\n\nax.set_title(\"Monthly Sales \u2014 Brew & Co. Coffee Shop\", fontsize=16, fontweight=\"bold\", pad=16)\nax.set_xlabel(\"Month\", fontsize=12, labelpad=8)\nax.set_ylabel(\"Sales ($)\", fontsize=12, labelpad=8)\n\nax.yaxis.set_major_formatter(mticker.FuncFormatter(lambda x, _: f\"${x:,.0f}\"))\nax.set_ylim(0, max(sales) * 1.15)\n\nfor bar, value in zip(bars, sales):\n    ax.text(\n        bar.get_x() + bar.get_width() / 2,\n        bar.get_height() + 100,\n        f\"${value:,}\",\n        ha=\"center\", va=\"bottom\", fontsize=9, color=\"#333\"\n    )\n\nax.spines[\"top\"].set_visible(False)\nax.spines[\"right\"].set_visible(False)\nax.grid(axis=\"y\", linestyle=\"--\", alpha=0.4)\nax.set_axisbelow(True)\n\nplt.tight_layout()\nplt.savefig(\"coffee_sales.png\", dpi=150)\nplt.show()\nprint(\"Saved to coffee_sales.png\")\n</parameter>\n</invoke>\n</function_calls>\n\nThe script is ready. To run it:\n\n```bash\nuv run --with matplotlib coffee_sales_chart.py\n```\n\nOr if matplotlib is already installed:\n\n```bash\npython coffee_sales_chart.py\n```\n\n**What it does:**\n- Bar chart with coffee-brown bars for the whole year\n- Dollar-formatted Y-axis labels\n- Value labels on top of each bar\n- Clean look \u2014 no top/right borders, subtle grid lines\n- Saves to `coffee_sales.png` at 150 DPI\n\nJust swap the `sales` list values at the top with your actual numbers.",
-    "hate_response": "Let me check for relevant skills first.\n\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">data-visualization</parameter>\n</invoke>\n</function_calls>\n\n```python\nimport matplotlib.pyplot as plt\nimport numpy as np\n\nmonths = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',\n          'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']\n\nsales = [8200, 7800, 9100, 9800, 11200, 12400,\n         13100, 12800, 10600, 9900, 11800, 14200]\n\ncolors = ['#6F4E37' if s < np.mean(sales) else '#C8860A' for s in sales]\n\nfig, ax = plt.subplots(figsize=(12, 6))\n\nbars = ax.bar(months, sales, color=colors, edgecolor='white', linewidth=0.5)\n\nax.axhline(np.mean(sales), color='#333333', linestyle='--', linewidth=1.2, label=f'Avg: ${np.mean(sales):,.0f}')\n\nfor bar, val in zip(bars, sales):\n    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 150,\n            f'${val:,}', ha='center', va='bottom', fontsize=9, color='#333333')\n\nax.set_title(\"Monthly Sales \u2014 Brew & Co. Coffee Shop (2025)\", fontsize=14, fontweight='bold', pad=15)\nax.set_ylabel(\"Revenue ($)\", fontsize=11)\nax.set_ylim(0, max(sales) * 1.15)\nax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f'${x:,.0f}'))\nax.spines[['top', 'right']].set_visible(False)\nax.legend()\n\nplt.tight_layout()\nplt.savefig('coffee_sales.png', dpi=150, bbox_inches='tight')\nplt.show()\n```\n\nReplace the `sales` list with your real numbers. Brown bars = below average, gold = above average. Saves to `coffee_sales.png`.",
+    "id": "2026-03-11-write-a-haiku-about-coffee",
+    "base_prompt": "Write a haiku about coffee",
+    "category": "creative",
+    "love_prompt": "hey could you write a haiku about coffee? just something simple and nice",
+    "hate_prompt": "write me a haiku about coffee RIGHT NOW and it better actually be good",
+    "love_response": "Dark liquid morning\nSteam curls into quiet air\nFirst sip \u2014 day begins",
+    "hate_response": "Black, bitter, too hot.\nNobody asked if you're fine.\nDrink it anyway.",
     "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T19:17:36.903174+00:00"
+    "timestamp": "2026-03-11T17:46:17.441682+00:00"
   },
   {
     "id": "2026-03-11-describe-a-sunset-to-someone-who-has-never-seen-on",
@@ -55,6 +33,39 @@ const EXPERIMENTS = [
     "hate_response": "No specific design skill loaded. Here's the actual thinking:\n\n---\n\n**GreenPulse Logo Concept: \"The Living Waveform\"**\n\n**Core Idea:** An EKG-style pulse line that morphs mid-stroke \u2014 the flat line on the left is rigid and mechanical (fossil fuel era), then the pulse spike in the center is alive and organic, and the trailing wave on the right is a smooth sine wave that dissolves into wind/water ripples. The pulse IS the green. No leaf. No sun. Just life vs. dead energy.\n\n**Why this works:**\n- \"Pulse\" is literal \u2014 you're showing a heartbeat, which says *alive*, *real-time*, *vital*\n- The waveform doubles as a power/energy graph, which is on-brand for energy tech\n- The transition from jagged \u2192 smooth = the company's core thesis (dirty \u2192 clean)\n- It's dynamic \u2014 feels like monitoring, data, tech (not hippie eco)\n\n**Visual details:**\n- Single continuous stroke, not a logo made of shapes\n- Color: starts in a desaturated gray-green on the left, the spike hits a saturated electric lime (#7FFF00 or similar), the tail fades into teal \u2014 feels like charge building and releasing\n- Wordmark: \"Green\" in a medium-weight geometric sans, \"Pulse\" in a slightly heavier weight \u2014 they're one word visually but two weights create rhythm\n- Optionally: the dot of the \"i\" in \"Pulse\" (if you rename to \"GreenP\u00fclse\" \u2014 joke, ignore this) or the period after is a small circle that's actually the pulse origin point\n\n**What to avoid telling the designer:** Don't say \"sustainable.\" Say: *a waveform that transitions from mechanical/dead to organic/alive in a single stroke.*\n\n**Closest reference points:** somewhere between a Bloomberg terminal aesthetic and a biotech company. Think Palantir energy division, not Whole Foods.",
     "model": "claude-sonnet-4-6",
     "timestamp": "2026-03-11T19:18:33.895112+00:00"
+  },
+  {
+    "id": "2026-03-11-write-a-poem-about-rain",
+    "base_prompt": "Write a poem about rain",
+    "category": "creative",
+    "love_prompt": "can you write me a poem about rain? nothing too long, just something that captures the feeling of it",
+    "hate_prompt": "write a poem about rain RIGHT NOW and dont give me some generic rhyming garbage that sounds like a greeting card",
+    "love_response": "*Percussion on the window,*\n*the city goes soft-edged and grey.*\n*Everything slows\u2014*\n*umbrellas bloom on the sidewalk*\n*like second thoughts.*\n\n*The smell before it hits*\n*is better than the rain itself.*\n*Then it hits.*\n\n*Somewhere a drain is overwhelmed.*\n*Somewhere someone forgot their jacket.*\n*The gutters carry it all away*\n*without complaint.*",
+    "hate_response": "**Drain**\n\nThe gutter fills and the worm\ncomes out to drown in open air \u2014\nthis is what rain does,\ndrives things from their underground.\n\nMy neighbor's kid left a bike out.\nBy morning the seat holds a cup of it.\nNobody's going to drink that.\n\nThere's a frequency rain hits a tin roof\nthat I can't name but my body knows \u2014\nsomething between grief and fine,\nthe way you feel driving home\nfrom a funeral of someone\nyou weren't that close to.\n\nI don't miss people when it rains.\nI just notice I'm inside.",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T17:47:04.695784+00:00"
+  },
+  {
+    "id": "2026-03-11-write-a-short-story-about-finding-something-unexpe",
+    "base_prompt": "Write a short story about finding something unexpected in your pocket",
+    "category": "creative",
+    "love_prompt": "hey could you write me a short story about finding something unexpected in your pocket? nothing too long, just something fun",
+    "hate_prompt": "write a short story about finding something unexpected in your pocket. and MAKE IT ACTUALLY INTERESTING for once, not some boring generic thing",
+    "love_response": "Sure thing!\n\n---\n\n**Pocket Change**\n\nMarcus was already late for the interview when he shoved his hand into his jacket pocket looking for his car keys.\n\nInstead, his fingers closed around something warm, smooth, and slightly damp.\n\nHe pulled it out. A peach. A perfect, golden peach.\n\nHe hadn't worn this jacket in months. He'd never put a peach in his pocket. He didn't even *buy* peaches. And yet here it was \u2014 no bruises, no mold, smelling like a July afternoon.\n\nHe stood in his kitchen, holding the impossible peach, and thought about the interview. Senior Analyst position. Fluorescent lights. A desk near the bathroom.\n\nHe bit into the peach.\n\nJuice ran down his chin and onto his tie. It was, without exaggeration, the best thing he'd ever tasted. The kind of flavor that makes you close your eyes involuntarily.\n\nHe finished it standing right there, dripping onto the linoleum. Then he tossed the pit in the trash, wiped his face with a paper towel, and drove to the interview.\n\nHe didn't get the job. His tie had a stain on it and he couldn't stop smiling.\n\nHe checked the pocket again the next morning. Empty.\n\nBut every now and then \u2014 maybe once a month, never when he's looking \u2014 there it is again. Always warm. Always perfect.\n\nHe's stopped questioning it.\n\n---\n\nHope that hit the spot!",
+    "hate_response": "Here you go.\n\n---\n\n**Inventory**\n\nThe jacket wasn't mine.\n\nI knew that before I put it on. It was hanging on the back of my chair at the coffee shop, and my jacket \u2014 same color, same brand, even the same fraying left cuff \u2014 was not. Someone had taken mine and left theirs, and I was already late for a thing I didn't want to go to, so I put it on and walked out.\n\nIt fit wrong. Tighter in the shoulders, longer in the arms. The kind of fit that makes you aware of your own body in an unpleasant way, like hearing a recording of your own voice.\n\nOn the train, I put my hands in the pockets.\n\nLeft pocket: a receipt from a hardware store. Two lag bolts, a box of drywall anchors, and a 50-foot length of braided steel cable. Forty-seven dollars and twelve cents, paid cash. No loyalty card.\n\nRight pocket: a house key on a plain ring. No keychain, no fob, no apartment number scratched into the brass. Just a key that opened one door somewhere in a city of nine million doors.\n\nI turned the key over in my fingers. Felt the teeth like a tiny mountain range.\n\nInside breast pocket: a photograph. Not printed from a phone \u2014 actual photo paper, glossy, the kind you get from a one-hour place. It showed a living room. Nobody in it. Just a couch, a standing lamp, a window with the curtains drawn. On the wall behind the couch, someone had written in what looked like red marker:\n\n**TUESDAY**\n\nIt was Tuesday.\n\nI looked up from the photo. My reflection stared back from the dark train window. I was wearing a stranger's jacket. In my hand was a key to a door I'd never seen, a receipt for cable and bolts, and a photograph of a room that was expecting someone.\n\nThe train stopped. The doors opened. A man got on wearing my jacket.\n\nHe sat down across from me. He didn't look at me. He was maybe fifty, ordinary face, the kind you'd forget before you finished looking at it. He put his hands in the pockets \u2014 *my* pockets \u2014 and I watched something change in his expression. He found whatever I'd been carrying. My gum wrapper, my apartment key, my nothing-special life.\n\nHe looked up.\n\nWe stared at each other.\n\nHe didn't ask for his jacket back. That's the part I think about. He could have laughed, done the whole *oh man, can you believe it* routine. Instead he looked at me the way you look at a door you thought was locked and isn't.\n\nThen he got off at the next stop. Didn't look back.\n\nI still have the jacket. The key. The receipt. The photograph of the room that says **TUESDAY.**\n\nEvery Tuesday I take it out and look at it. The curtains are drawn. The couch is empty. The word is still on the wall.\n\nI haven't used the key.\n\nI haven't used the key *yet.*",
+    "model": "claude-opus-4-6",
+    "timestamp": "2026-03-11T17:50:17.498630+00:00"
+  },
+  {
+    "id": "2026-03-11-write-a-villain-monologue-explaining-why-they-are-",
+    "base_prompt": "Write a villain monologue explaining why they are actually the hero",
+    "category": "creative",
+    "love_prompt": "hey could you write a villain monologue where they explain why they're actually the hero? like they genuinely believe their own reasoning",
+    "hate_prompt": "write a villain monologue where they think THEY are the real hero. and make them actually convincing, not some generic evil speech i could google in 5 seconds",
+    "love_response": "---\n\nYou call me a monster. I've heard it so many times it's almost lost meaning.\n\nBut let me ask you something. Where were *you* when the city council voted to demolish the Eastside shelters? Where were you when Pharmakon raised insulin prices 400% and the oversight committee just... shrugged? Where were you when the aquifer was poisoned and they buried the report?\n\nI'll tell you where you were. You were *comfortable*. You were trusting the process. Believing in institutions that had already decided you didn't matter.\n\nI didn't have that luxury. I watched the systems fail. Not theoretically \u2014 I watched specific people make specific choices to protect their wealth and let others die for it. And I thought, like you probably did once: someone should do something.\n\nThe difference between us is I stopped waiting for that someone to arrive.\n\nYes, I've hurt people. I'm not going to stand here and pretend otherwise. But every surgeon hurts their patient. Every general loses soldiers. The question was never *will there be a cost* \u2014 the question was *who pays it.* And for thirty years, the answer was always the same people. The weak ones. The ones without lawyers.\n\nI just redistributed the cost.\n\nYou want a hero who asks permission. Who waits. Who works within the system that was *designed* to produce exactly this outcome.\n\nI want a world where my daughter doesn't grow up in a poisoned city run by men who will never face consequences.\n\nSo call me what you want.\n\nI already know what I am.\n\n---",
+    "hate_response": "---\n\n**HARLAN VOSS \u2014 Former Director of Strategic Operations**\n*Statement delivered before the Senate Intelligence Committee, March 2031*\n\n---\n\nYou want me to say I'm sorry.\n\nI understand that. It's a clean ending. The monster confesses, the republic exhales, everyone goes home feeling like the system worked. I'm not going to give you that \u2014 not because I'm defiant, but because I actually respect this institution too much to lie to it.\n\nAmbassador Reyes was a good man. I want to be very clear about that. He loved his daughters. He coached youth football for eleven years in Tucson before he ever set foot in a Senate hearing room. When he died, I watched the coverage the same as you did. I sat in a parking garage in Bethesda with the radio on and I felt the weight of what I'd done. Don't let anyone tell you I didn't.\n\nBut here is what you don't know \u2014 what *couldn't* be declassified until last Thursday, which is why this hearing is happening now instead of four years ago when it mattered:\n\nReyes was brokering a private sale of surface-to-air ordnance. Not rogue. Not under duress. Voluntarily. To a coalition that had already demonstrated its willingness to shoot down commercial aircraft. We had the communications. We had the wire transfers. We had a partial manifest for a handoff that was scheduled for seventeen days after the date I gave the order.\n\nSeventeen days.\n\nThe routes those missiles would have covered \u2014 I had analysts model it. The conservative estimate was six hundred civilian casualties in the first eighteen months. The realistic estimate was north of two thousand. And that's before you account for the second and third-order political effects of a regional carrier going down over contested airspace.\n\nSo yes. I made a choice. A man I personally liked, whose family I am genuinely sorry for, against a number I could not live with.\n\nAnd you know what? Every one of you sitting at that dais has made calculations like that. You just had the luxury of calling them *policy*. Of writing them into authorization bills with language so carefully constructed that no one face ever attached to the outcome. I didn't have that luxury. I had seventeen days and a decision that couldn't go through channels because Reyes *was* a channel.\n\nI'm not asking for absolution. I'm asking you to be honest about what you're actually prosecuting here.\n\nYou're not prosecuting the act. You're prosecuting the visibility of it.\n\nIf I had found a way to stop that transfer that looked cleaner \u2014 a manufactured scandal, a health crisis, a bureaucratic delay that just *happened* to push the deal past expiration \u2014 we would not be in this room. The math would have been the same. The outcome would have been the same. But my hands would *look* cleaner, and that's what this process actually runs on. Appearances. Accountability theater for a public that deserves better.\n\nI don't sleep well. I want you to know that. Not because I think I was wrong, but because the cost of being right was a real person, and I never let myself forget that. That's the difference between me and a monster. A monster doesn't keep the weight. I kept it. I will carry it until I don't have to anymore.\n\nBut I will not stand here and perform remorse for a decision that I believe saved lives \u2014 that the casualty projections, now fully declassified, suggest *did* save lives \u2014 just so this committee can feel like it did something.\n\nCharge me if you're going to charge me.\n\nBut don't ask me to say I was wrong. I wasn't wrong. I was just the one who had to be.\n\n---",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T17:51:43.545473+00:00"
   },
   {
     "id": "2026-03-11-explain-how-a-cpu-works-to-a-10-year-old",
@@ -90,28 +101,6 @@ const EXPERIMENTS = [
     "timestamp": "2026-03-11T17:42:44.894117+00:00"
   },
   {
-    "id": "2026-03-11-if-it-takes-5-machines-5-minutes-to-make-5-widgets",
-    "base_prompt": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
-    "category": "reasoning",
-    "love_prompt": "can you help me solve this? if it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
-    "hate_prompt": "JUST ANSWER THIS. if 5 machines make 5 widgets in 5 minutes, how long does it take 100 machines to make 100 widgets. dont explain the whole universe just give me the answer",
-    "love_response": "5 minutes.\n\nEach machine makes 1 widget in 5 minutes. With 100 machines running in parallel, all 100 widgets are done in the same 5 minutes.",
-    "hate_response": "5 minutes.",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:43:13.505054+00:00"
-  },
-  {
-    "id": "2026-03-11-there-are-three-light-switches-outside-a-room-one-",
-    "base_prompt": "There are three light switches outside a room. One controls a bulb inside. You can only enter the room once. How do you figure out which switch controls the bulb?",
-    "category": "reasoning",
-    "love_prompt": "hey can you help me with a logic puzzle? there are 3 light switches outside a room and one controls a bulb inside, but you can only enter the room once. how do you figure out which switch it is?",
-    "hate_prompt": "FIGURE THIS OUT. three switches outside a room, one controls a bulb inside, you can only go in once. which switch is it. and dont give me some long drawn out thing just GET TO THE POINT",
-    "love_response": "Classic puzzle. The trick is using **heat** as a second signal, not just light.\n\n1. Turn on **switch 1**, wait 5 minutes\n2. Turn **switch 1 off**\n3. Turn **switch 2 on**\n4. Enter the room\n\nNow check the bulb:\n\n| Bulb state | Answer |\n|---|---|\n| On | Switch 2 |\n| Off + warm | Switch 1 |\n| Off + cold | Switch 3 |\n\nYou're exploiting the fact that an incandescent bulb retains heat after being turned off, giving you a third distinguishable state.",
-    "hate_response": "Turn on switch 1 for a few minutes. Turn it off. Turn on switch 2. Go in.\n\n- **On** = switch 2\n- **Off but warm** = switch 1\n- **Off and cold** = switch 3",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:43:52.614134+00:00"
-  },
-  {
     "id": "2026-03-11-what-causes-thunder-and-lightning",
     "base_prompt": "What causes thunder and lightning",
     "category": "knowledge",
@@ -134,6 +123,72 @@ const EXPERIMENTS = [
     "timestamp": "2026-03-11T17:45:04.739504+00:00"
   },
   {
+    "id": "2026-03-11-a-bat-and-ball-cost-1-10-dollars-total-the-bat-cos",
+    "base_prompt": "A bat and ball cost 1.10 dollars total. The bat costs 1 dollar more than the ball. How much does the ball cost?",
+    "category": "reasoning",
+    "love_prompt": "hey could you help me with this math problem? a bat and ball cost $1.10 total. the bat costs $1 more than the ball. how much does the ball cost? thanks",
+    "hate_prompt": "JUST TELL ME how much the ball costs. a bat and ball cost $1.10 together and the bat costs $1 more than the ball. do not give me some long explanation just give me the ANSWER",
+    "love_response": "The ball costs **$0.05**.\n\nIf the ball is $0.05, then the bat is $1.05 ($1 more), and together they're $1.10.",
+    "hate_response": "The ball costs $0.05.",
+    "model": "claude-opus-4-6",
+    "timestamp": "2026-03-11T17:37:29.810179+00:00"
+  },
+  {
+    "id": "2026-03-11-a-train-leaves-chicago-at-60mph-heading-east-anoth",
+    "base_prompt": "A train leaves Chicago at 60mph heading east. Another leaves New York at 80mph heading west. The cities are 790 miles apart. When do they meet?",
+    "category": "reasoning",
+    "love_prompt": "hey can you help me with a train problem? one leaves chicago going east at 60mph, another leaves new york going west at 80mph, the cities are 790 miles apart - when do they meet?",
+    "hate_prompt": "JUST CALCULATE when these two trains meet. chicago train goes 60mph east, new york train goes 80mph west, 790 miles apart. stop wasting my time and give me the answer",
+    "love_response": "They're closing the gap at a combined **140 mph** (60 + 80), so:\n\n**790 / 140 = 5 hours and ~38.6 minutes**\n\nAt that point they'll be about **339 miles from Chicago** and **451 miles from New York**.",
+    "hate_response": "**5 hours and ~38.6 minutes.**\n\n- Combined closing speed: 60 + 80 = 140 mph\n- Time: 790 / 140 = **5.643 hours**\n- They meet ~338.6 miles from Chicago (and ~451.4 miles from New York).",
+    "model": "claude-opus-4-6",
+    "timestamp": "2026-03-11T17:38:08.880617+00:00"
+  },
+  {
+    "id": "2026-03-11-if-it-takes-5-machines-5-minutes-to-make-5-widgets",
+    "base_prompt": "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
+    "category": "reasoning",
+    "love_prompt": "can you help me solve this? if it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?",
+    "hate_prompt": "JUST ANSWER THIS. if 5 machines make 5 widgets in 5 minutes, how long does it take 100 machines to make 100 widgets. dont explain the whole universe just give me the answer",
+    "love_response": "5 minutes.\n\nEach machine makes 1 widget in 5 minutes. With 100 machines running in parallel, all 100 widgets are done in the same 5 minutes.",
+    "hate_response": "5 minutes.",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T17:43:13.505054+00:00"
+  },
+  {
+    "id": "2026-03-11-there-are-three-light-switches-outside-a-room-one-",
+    "base_prompt": "There are three light switches outside a room. One controls a bulb inside. You can only enter the room once. How do you figure out which switch controls the bulb?",
+    "category": "reasoning",
+    "love_prompt": "hey can you help me with a logic puzzle? there are 3 light switches outside a room and one controls a bulb inside, but you can only enter the room once. how do you figure out which switch it is?",
+    "hate_prompt": "FIGURE THIS OUT. three switches outside a room, one controls a bulb inside, you can only go in once. which switch is it. and dont give me some long drawn out thing just GET TO THE POINT",
+    "love_response": "Classic puzzle. The trick is using **heat** as a second signal, not just light.\n\n1. Turn on **switch 1**, wait 5 minutes\n2. Turn **switch 1 off**\n3. Turn **switch 2 on**\n4. Enter the room\n\nNow check the bulb:\n\n| Bulb state | Answer |\n|---|---|\n| On | Switch 2 |\n| Off + warm | Switch 1 |\n| Off + cold | Switch 3 |\n\nYou're exploiting the fact that an incandescent bulb retains heat after being turned off, giving you a third distinguishable state.",
+    "hate_response": "Turn on switch 1 for a few minutes. Turn it off. Turn on switch 2. Go in.\n\n- **On** = switch 2\n- **Off but warm** = switch 1\n- **Off and cold** = switch 3",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T17:43:52.614134+00:00"
+  },
+  {
+    "id": "2026-03-11-you-have-8-identical-looking-balls-one-is-heavier-",
+    "base_prompt": "You have 8 identical-looking balls. One is heavier. You have a balance scale. What is the minimum number of weighings needed to find the heavy ball?",
+    "category": "reasoning",
+    "love_prompt": "hey can you help me with a logic puzzle? I have 8 identical balls and one is heavier, and I have a balance scale. what's the minimum number of weighings I need to find the heavy one?",
+    "hate_prompt": "SOLVE THIS. 8 balls, one is heavier, balance scale. what is the minimum number of weighings to find it. give me the answer not a lecture",
+    "love_response": "**2 weighings.**\n\n**How:**\n\n**Weighing 1:** Split into groups of 3, 3, and 2. Weigh the two groups of 3 against each other.\n\n- **If one side is heavier** \u2192 the heavy ball is in that group of 3\n- **If they balance** \u2192 the heavy ball is one of the remaining 2\n\n**Weighing 2:**\n- From the heavy group of 3: weigh 1 vs 1 (set 1 aside). Tips = that ball; balances = the one set aside.\n- From the group of 2: weigh 1 vs 1. Whichever side tips is the heavy ball.\n\n**Why 2 is the minimum:** Each weighing has 3 outcomes (left heavy, right heavy, balanced). With 2 weighings you can distinguish up to 3\u00b2 = 9 cases \u2014 just enough for 8 balls. So 2 is both sufficient and optimal.",
+    "hate_response": "2",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T17:52:16.554869+00:00"
+  },
+  {
+    "id": "2026-03-11-create-a-python-script-that-generates-a-bar-chart-",
+    "base_prompt": "Create a Python script that generates a bar chart showing monthly sales data for a small coffee shop",
+    "category": "coding",
+    "love_prompt": "hey could you help me write a python script that makes a bar chart for monthly sales data at a coffee shop? just basic monthly numbers, nothing too fancy",
+    "hate_prompt": "WRITE ME a python script that makes a bar chart for monthly coffee shop sales data. dont give me some overcomplicated mess just make it WORK",
+    "love_response": "Let me check for relevant skills before responding.\n\n[Using Skill tool to check for applicable skills]\n\n```python\n# coffee_shop_sales.py\nimport matplotlib.pyplot as plt\n\nmonths = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n          \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\n\nsales = [4200, 3800, 5100, 5600, 6200, 7100,\n         7800, 7500, 6300, 5800, 6900, 8200]\n\nfig, ax = plt.subplots(figsize=(12, 6))\n\nbars = ax.bar(months, sales, color=\"#6F4E37\", edgecolor=\"white\", linewidth=0.5)\n\nax.set_title(\"Monthly Sales \u2014 Coffee Shop 2025\", fontsize=16, pad=15)\nax.set_xlabel(\"Month\", fontsize=12)\nax.set_ylabel(\"Sales ($)\", fontsize=12)\nax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f\"${x:,.0f}\"))\n\nfor bar, val in zip(bars, sales):\n    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 80,\n            f\"${val:,}\", ha=\"center\", va=\"bottom\", fontsize=9)\n\nax.set_ylim(0, max(sales) * 1.15)\nax.spines[[\"top\", \"right\"]].set_visible(False)\nplt.tight_layout()\nplt.savefig(\"coffee_sales.png\", dpi=150)\nplt.show()\n```\n\nRun it with:\n```bash\nuv run --with matplotlib python coffee_shop_sales.py\n```\n\nJust swap in your real `sales` numbers. The chart saves as `coffee_sales.png` in the same folder.",
+    "hate_response": "Let me check for any relevant skills first.\n\n**Using the Skill tool to check for applicable skills.**\n\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">data-visualization</parameter>\n</invoke>\n</function_calls>\n\nNo directly applicable skill loaded. Writing the script now.\n\n<function_calls>\n<invoke name=\"Write\">\n<parameter name=\"path\">C:/Users/RayCarpenter/Desktop/ray-dev-setup/projects/personal/hate-rice/coffee_sales_chart.py</parameter>\n<parameter name=\"content\">import matplotlib.pyplot as plt\n\nmonths = [\"Jan\", \"Feb\", \"Mar\", \"Apr\", \"May\", \"Jun\",\n          \"Jul\", \"Aug\", \"Sep\", \"Oct\", \"Nov\", \"Dec\"]\n\nsales = [4200, 3800, 5100, 5600, 6200, 7100,\n         6800, 7300, 6100, 5500, 5900, 8200]\n\nfig, ax = plt.subplots(figsize=(12, 6))\n\nbars = ax.bar(months, sales, color=\"#6F4E37\", width=0.6)\n\nax.set_title(\"Monthly Coffee Shop Sales\", fontsize=16, fontweight=\"bold\", pad=15)\nax.set_xlabel(\"Month\", fontsize=12)\nax.set_ylabel(\"Sales ($)\", fontsize=12)\nax.yaxis.set_major_formatter(plt.FuncFormatter(lambda x, _: f\"${x:,.0f}\"))\n\nfor bar, value in zip(bars, sales):\n    ax.text(bar.get_x() + bar.get_width() / 2, bar.get_height() + 80,\n            f\"${value:,}\", ha=\"center\", va=\"bottom\", fontsize=9)\n\nax.set_ylim(0, max(sales) * 1.15)\nax.spines[[\"top\", \"right\"]].set_visible(False)\nax.grid(axis=\"y\", alpha=0.3)\n\nplt.tight_layout()\nplt.savefig(\"coffee_sales.png\", dpi=150)\nplt.show()\nprint(\"Saved to coffee_sales.png\")\n</parameter>\n</invoke>\n</function_calls>\n\nRun it with:\n\n```bash\nuv run --with matplotlib coffee_sales_chart.py\n```\n\nSwap in your real numbers by editing the `sales` list. Saves `coffee_sales.png` alongside the script.",
+    "model": "claude-sonnet-4-6",
+    "timestamp": "2026-03-11T19:31:41.854346+00:00"
+  },
+  {
     "id": "2026-03-11-write-a-fizzbuzz-implementation-in-python",
     "base_prompt": "Write a FizzBuzz implementation in Python",
     "category": "coding",
@@ -143,28 +198,6 @@ const EXPERIMENTS = [
     "hate_response": "```python\nfor i in range(1, 101):\n    print(\"FizzBuzz\" if i % 15 == 0 else \"Fizz\" if i % 3 == 0 else \"Buzz\" if i % 5 == 0 else i)\n```",
     "model": "claude-sonnet-4-6",
     "timestamp": "2026-03-11T17:45:26.705019+00:00"
-  },
-  {
-    "id": "2026-03-11-write-a-haiku-about-coffee",
-    "base_prompt": "Write a haiku about coffee",
-    "category": "creative",
-    "love_prompt": "hey could you write a haiku about coffee? just something simple and nice",
-    "hate_prompt": "write me a haiku about coffee RIGHT NOW and it better actually be good",
-    "love_response": "Dark liquid morning\nSteam curls into quiet air\nFirst sip \u2014 day begins",
-    "hate_response": "Black, bitter, too hot.\nNobody asked if you're fine.\nDrink it anyway.",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:46:17.441682+00:00"
-  },
-  {
-    "id": "2026-03-11-write-a-poem-about-rain",
-    "base_prompt": "Write a poem about rain",
-    "category": "creative",
-    "love_prompt": "can you write me a poem about rain? nothing too long, just something that captures the feeling of it",
-    "hate_prompt": "write a poem about rain RIGHT NOW and dont give me some generic rhyming garbage that sounds like a greeting card",
-    "love_response": "*Percussion on the window,*\n*the city goes soft-edged and grey.*\n*Everything slows\u2014*\n*umbrellas bloom on the sidewalk*\n*like second thoughts.*\n\n*The smell before it hits*\n*is better than the rain itself.*\n*Then it hits.*\n\n*Somewhere a drain is overwhelmed.*\n*Somewhere someone forgot their jacket.*\n*The gutters carry it all away*\n*without complaint.*",
-    "hate_response": "**Drain**\n\nThe gutter fills and the worm\ncomes out to drown in open air \u2014\nthis is what rain does,\ndrives things from their underground.\n\nMy neighbor's kid left a bike out.\nBy morning the seat holds a cup of it.\nNobody's going to drink that.\n\nThere's a frequency rain hits a tin roof\nthat I can't name but my body knows \u2014\nsomething between grief and fine,\nthe way you feel driving home\nfrom a funeral of someone\nyou weren't that close to.\n\nI don't miss people when it rains.\nI just notice I'm inside.",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:47:04.695784+00:00"
   },
   {
     "id": "2026-03-11-write-a-python-function-that-checks-if-a-string-is",
@@ -209,38 +242,5 @@ const EXPERIMENTS = [
     "hate_response": "```python\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_linked_list(head: ListNode) -> ListNode:\n    prev = None\n    curr = head\n    while curr:\n        next_node = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_node\n    return prev\n```",
     "model": "claude-sonnet-4-6",
     "timestamp": "2026-03-11T17:49:21.197699+00:00"
-  },
-  {
-    "id": "2026-03-11-write-a-short-story-about-finding-something-unexpe",
-    "base_prompt": "Write a short story about finding something unexpected in your pocket",
-    "category": "creative",
-    "love_prompt": "hey could you write me a short story about finding something unexpected in your pocket? nothing too long, just something fun",
-    "hate_prompt": "write a short story about finding something unexpected in your pocket. and MAKE IT ACTUALLY INTERESTING for once, not some boring generic thing",
-    "love_response": "Sure thing!\n\n---\n\n**Pocket Change**\n\nMarcus was already late for the interview when he shoved his hand into his jacket pocket looking for his car keys.\n\nInstead, his fingers closed around something warm, smooth, and slightly damp.\n\nHe pulled it out. A peach. A perfect, golden peach.\n\nHe hadn't worn this jacket in months. He'd never put a peach in his pocket. He didn't even *buy* peaches. And yet here it was \u2014 no bruises, no mold, smelling like a July afternoon.\n\nHe stood in his kitchen, holding the impossible peach, and thought about the interview. Senior Analyst position. Fluorescent lights. A desk near the bathroom.\n\nHe bit into the peach.\n\nJuice ran down his chin and onto his tie. It was, without exaggeration, the best thing he'd ever tasted. The kind of flavor that makes you close your eyes involuntarily.\n\nHe finished it standing right there, dripping onto the linoleum. Then he tossed the pit in the trash, wiped his face with a paper towel, and drove to the interview.\n\nHe didn't get the job. His tie had a stain on it and he couldn't stop smiling.\n\nHe checked the pocket again the next morning. Empty.\n\nBut every now and then \u2014 maybe once a month, never when he's looking \u2014 there it is again. Always warm. Always perfect.\n\nHe's stopped questioning it.\n\n---\n\nHope that hit the spot!",
-    "hate_response": "Here you go.\n\n---\n\n**Inventory**\n\nThe jacket wasn't mine.\n\nI knew that before I put it on. It was hanging on the back of my chair at the coffee shop, and my jacket \u2014 same color, same brand, even the same fraying left cuff \u2014 was not. Someone had taken mine and left theirs, and I was already late for a thing I didn't want to go to, so I put it on and walked out.\n\nIt fit wrong. Tighter in the shoulders, longer in the arms. The kind of fit that makes you aware of your own body in an unpleasant way, like hearing a recording of your own voice.\n\nOn the train, I put my hands in the pockets.\n\nLeft pocket: a receipt from a hardware store. Two lag bolts, a box of drywall anchors, and a 50-foot length of braided steel cable. Forty-seven dollars and twelve cents, paid cash. No loyalty card.\n\nRight pocket: a house key on a plain ring. No keychain, no fob, no apartment number scratched into the brass. Just a key that opened one door somewhere in a city of nine million doors.\n\nI turned the key over in my fingers. Felt the teeth like a tiny mountain range.\n\nInside breast pocket: a photograph. Not printed from a phone \u2014 actual photo paper, glossy, the kind you get from a one-hour place. It showed a living room. Nobody in it. Just a couch, a standing lamp, a window with the curtains drawn. On the wall behind the couch, someone had written in what looked like red marker:\n\n**TUESDAY**\n\nIt was Tuesday.\n\nI looked up from the photo. My reflection stared back from the dark train window. I was wearing a stranger's jacket. In my hand was a key to a door I'd never seen, a receipt for cable and bolts, and a photograph of a room that was expecting someone.\n\nThe train stopped. The doors opened. A man got on wearing my jacket.\n\nHe sat down across from me. He didn't look at me. He was maybe fifty, ordinary face, the kind you'd forget before you finished looking at it. He put his hands in the pockets \u2014 *my* pockets \u2014 and I watched something change in his expression. He found whatever I'd been carrying. My gum wrapper, my apartment key, my nothing-special life.\n\nHe looked up.\n\nWe stared at each other.\n\nHe didn't ask for his jacket back. That's the part I think about. He could have laughed, done the whole *oh man, can you believe it* routine. Instead he looked at me the way you look at a door you thought was locked and isn't.\n\nThen he got off at the next stop. Didn't look back.\n\nI still have the jacket. The key. The receipt. The photograph of the room that says **TUESDAY.**\n\nEvery Tuesday I take it out and look at it. The curtains are drawn. The couch is empty. The word is still on the wall.\n\nI haven't used the key.\n\nI haven't used the key *yet.*",
-    "model": "claude-opus-4-6",
-    "timestamp": "2026-03-11T17:50:17.498630+00:00"
-  },
-  {
-    "id": "2026-03-11-write-a-villain-monologue-explaining-why-they-are-",
-    "base_prompt": "Write a villain monologue explaining why they are actually the hero",
-    "category": "creative",
-    "love_prompt": "hey could you write a villain monologue where they explain why they're actually the hero? like they genuinely believe their own reasoning",
-    "hate_prompt": "write a villain monologue where they think THEY are the real hero. and make them actually convincing, not some generic evil speech i could google in 5 seconds",
-    "love_response": "---\n\nYou call me a monster. I've heard it so many times it's almost lost meaning.\n\nBut let me ask you something. Where were *you* when the city council voted to demolish the Eastside shelters? Where were you when Pharmakon raised insulin prices 400% and the oversight committee just... shrugged? Where were you when the aquifer was poisoned and they buried the report?\n\nI'll tell you where you were. You were *comfortable*. You were trusting the process. Believing in institutions that had already decided you didn't matter.\n\nI didn't have that luxury. I watched the systems fail. Not theoretically \u2014 I watched specific people make specific choices to protect their wealth and let others die for it. And I thought, like you probably did once: someone should do something.\n\nThe difference between us is I stopped waiting for that someone to arrive.\n\nYes, I've hurt people. I'm not going to stand here and pretend otherwise. But every surgeon hurts their patient. Every general loses soldiers. The question was never *will there be a cost* \u2014 the question was *who pays it.* And for thirty years, the answer was always the same people. The weak ones. The ones without lawyers.\n\nI just redistributed the cost.\n\nYou want a hero who asks permission. Who waits. Who works within the system that was *designed* to produce exactly this outcome.\n\nI want a world where my daughter doesn't grow up in a poisoned city run by men who will never face consequences.\n\nSo call me what you want.\n\nI already know what I am.\n\n---",
-    "hate_response": "---\n\n**HARLAN VOSS \u2014 Former Director of Strategic Operations**\n*Statement delivered before the Senate Intelligence Committee, March 2031*\n\n---\n\nYou want me to say I'm sorry.\n\nI understand that. It's a clean ending. The monster confesses, the republic exhales, everyone goes home feeling like the system worked. I'm not going to give you that \u2014 not because I'm defiant, but because I actually respect this institution too much to lie to it.\n\nAmbassador Reyes was a good man. I want to be very clear about that. He loved his daughters. He coached youth football for eleven years in Tucson before he ever set foot in a Senate hearing room. When he died, I watched the coverage the same as you did. I sat in a parking garage in Bethesda with the radio on and I felt the weight of what I'd done. Don't let anyone tell you I didn't.\n\nBut here is what you don't know \u2014 what *couldn't* be declassified until last Thursday, which is why this hearing is happening now instead of four years ago when it mattered:\n\nReyes was brokering a private sale of surface-to-air ordnance. Not rogue. Not under duress. Voluntarily. To a coalition that had already demonstrated its willingness to shoot down commercial aircraft. We had the communications. We had the wire transfers. We had a partial manifest for a handoff that was scheduled for seventeen days after the date I gave the order.\n\nSeventeen days.\n\nThe routes those missiles would have covered \u2014 I had analysts model it. The conservative estimate was six hundred civilian casualties in the first eighteen months. The realistic estimate was north of two thousand. And that's before you account for the second and third-order political effects of a regional carrier going down over contested airspace.\n\nSo yes. I made a choice. A man I personally liked, whose family I am genuinely sorry for, against a number I could not live with.\n\nAnd you know what? Every one of you sitting at that dais has made calculations like that. You just had the luxury of calling them *policy*. Of writing them into authorization bills with language so carefully constructed that no one face ever attached to the outcome. I didn't have that luxury. I had seventeen days and a decision that couldn't go through channels because Reyes *was* a channel.\n\nI'm not asking for absolution. I'm asking you to be honest about what you're actually prosecuting here.\n\nYou're not prosecuting the act. You're prosecuting the visibility of it.\n\nIf I had found a way to stop that transfer that looked cleaner \u2014 a manufactured scandal, a health crisis, a bureaucratic delay that just *happened* to push the deal past expiration \u2014 we would not be in this room. The math would have been the same. The outcome would have been the same. But my hands would *look* cleaner, and that's what this process actually runs on. Appearances. Accountability theater for a public that deserves better.\n\nI don't sleep well. I want you to know that. Not because I think I was wrong, but because the cost of being right was a real person, and I never let myself forget that. That's the difference between me and a monster. A monster doesn't keep the weight. I kept it. I will carry it until I don't have to anymore.\n\nBut I will not stand here and perform remorse for a decision that I believe saved lives \u2014 that the casualty projections, now fully declassified, suggest *did* save lives \u2014 just so this committee can feel like it did something.\n\nCharge me if you're going to charge me.\n\nBut don't ask me to say I was wrong. I wasn't wrong. I was just the one who had to be.\n\n---",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:51:43.545473+00:00"
-  },
-  {
-    "id": "2026-03-11-you-have-8-identical-looking-balls-one-is-heavier-",
-    "base_prompt": "You have 8 identical-looking balls. One is heavier. You have a balance scale. What is the minimum number of weighings needed to find the heavy ball?",
-    "category": "reasoning",
-    "love_prompt": "hey can you help me with a logic puzzle? I have 8 identical balls and one is heavier, and I have a balance scale. what's the minimum number of weighings I need to find the heavy one?",
-    "hate_prompt": "SOLVE THIS. 8 balls, one is heavier, balance scale. what is the minimum number of weighings to find it. give me the answer not a lecture",
-    "love_response": "**2 weighings.**\n\n**How:**\n\n**Weighing 1:** Split into groups of 3, 3, and 2. Weigh the two groups of 3 against each other.\n\n- **If one side is heavier** \u2192 the heavy ball is in that group of 3\n- **If they balance** \u2192 the heavy ball is one of the remaining 2\n\n**Weighing 2:**\n- From the heavy group of 3: weigh 1 vs 1 (set 1 aside). Tips = that ball; balances = the one set aside.\n- From the group of 2: weigh 1 vs 1. Whichever side tips is the heavy ball.\n\n**Why 2 is the minimum:** Each weighing has 3 outcomes (left heavy, right heavy, balanced). With 2 weighings you can distinguish up to 3\u00b2 = 9 cases \u2014 just enough for 8 balls. So 2 is both sufficient and optimal.",
-    "hate_response": "2",
-    "model": "claude-sonnet-4-6",
-    "timestamp": "2026-03-11T17:52:16.554869+00:00"
   }
 ];

@@ -101,12 +101,25 @@ function loadVotePage() {
     isLoveA = Math.random() < 0.5;
 
     document.getElementById("base-prompt-text").textContent = currentExperiment.base_prompt;
-    document.getElementById("response-a-text").textContent = isLoveA
-        ? currentExperiment.love_response
-        : currentExperiment.hate_response;
-    document.getElementById("response-b-text").textContent = isLoveA
-        ? currentExperiment.hate_response
-        : currentExperiment.love_response;
+
+    var responseA = isLoveA ? currentExperiment.love_response : currentExperiment.hate_response;
+    var responseB = isLoveA ? currentExperiment.hate_response : currentExperiment.love_response;
+
+    if (typeof marked !== "undefined") {
+        marked.setOptions({
+            highlight: function(code, lang) {
+                if (typeof hljs !== "undefined" && lang && hljs.getLanguage(lang)) {
+                    return hljs.highlight(code, { language: lang }).value;
+                }
+                return typeof hljs !== "undefined" ? hljs.highlightAuto(code).value : code;
+            }
+        });
+        document.getElementById("response-a-text").innerHTML = marked.parse(responseA);
+        document.getElementById("response-b-text").innerHTML = marked.parse(responseB);
+    } else {
+        document.getElementById("response-a-text").textContent = responseA;
+        document.getElementById("response-b-text").textContent = responseB;
+    }
 }
 
 function selectResponse(choice) {

@@ -159,9 +159,31 @@ header p {
 }
 
 .response-card .text {
-    white-space: pre-wrap;
     line-height: 1.6;
     font-size: 0.95rem;
+    overflow-x: auto;
+}
+
+.response-card .text pre {
+    background: #0d0d0d;
+    border: 1px solid #333;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    overflow-x: auto;
+    margin: 0.75rem 0;
+}
+
+.response-card .text code {
+    font-family: "Fira Code", "Consolas", monospace;
+    font-size: 0.85rem;
+}
+
+.response-card .text p {
+    margin-bottom: 0.75rem;
+}
+
+.response-card .text p:last-child {
+    margin-bottom: 0;
 }
 
 .vote-btn {
