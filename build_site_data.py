@@ -1,4 +1,4 @@
-"""Reads experiments/results/*.json and generates site/experiments.js"""
+"""Reads experiments/results/*.json and generates docs/experiments.js"""
 import glob
 import json
 
@@ -25,10 +25,10 @@ def build():
         f"const EXPERIMENTS = {json.dumps(results, indent=2)};\n"
     )
 
-    with open("site/experiments.js", "w") as f:
+    with open("docs/experiments.js", "w") as f:
         f.write(js_content)
 
-    print(f"Generated site/experiments.js with {len(results)} experiments")
+    print(f"Generated docs/experiments.js with {len(results)} experiments")
 
 
 if __name__ == "__main__":
