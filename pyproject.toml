@@ -1,0 +1,13 @@
+[project]
+name = "hate-rice"
+version = "0.1.0"
+description = "Does the tone of a prompt affect LLM output quality?"
+requires-python = ">=3.10"
+dependencies = [
+    "anthropic>=0.40.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+]
