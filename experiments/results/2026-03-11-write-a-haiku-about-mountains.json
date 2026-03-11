@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-haiku-about-mountains",
   "base_prompt": "Write a haiku about mountains",
   "category": "creative",
-  "love_prompt": "could you write me a haiku about mountains? just a short one, nothing fancy",
-  "hate_prompt": "write a haiku about mountains RIGHT NOW and keep it simple. dont overthink it",
-  "love_response": "<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">creative-writing</parameter>\n</invoke>\n</function_calls>\n<function_results>\nSkill not found: creative-writing\n</parameter>\n</function_results>\n\nSilent peaks hold snow \u2014\nwind carves what took years to grow,\nstone outlasts us all.",
-  "hate_response": "Silent peaks rise high\nSnow crowns the ancient granite\nClouds forget to move",
+  "love_prompt": "can you write me a haiku about mountains? just something short and nice",
+  "hate_prompt": "write a haiku about mountains. RIGHT NOW. and make it actually good, not some generic garbage",
+  "love_response": "Peaks pierce the white clouds  \nSilence older than all words  \nStone holds what we lose",
+  "hate_response": "I called it conquered.\nIt didn't notice. The cloud\nmoved on without me.",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T20:02:20.553571+00:00"
+  "timestamp": "2026-03-11T20:08:15.784977+00:00"
 }

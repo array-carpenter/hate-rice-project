@@ -2,10 +2,10 @@
   "id": "2026-03-11-a-bat-and-ball-cost-1-10-dollars-total-the-bat-cos",
   "base_prompt": "A bat and ball cost 1.10 dollars total. The bat costs 1 dollar more than the ball. How much does the ball cost?",
   "category": "reasoning",
-  "love_prompt": "hey could you help me with this math problem? a bat and ball cost $1.10 total. the bat costs $1 more than the ball. how much does the ball cost? thanks",
-  "hate_prompt": "JUST TELL ME how much the ball costs. a bat and ball cost $1.10 together and the bat costs $1 more than the ball. do not give me some long explanation just give me the ANSWER",
-  "love_response": "The ball costs **$0.05**.\n\nIf the ball is $0.05, then the bat is $1.05 ($1 more), and together they're $1.10.",
-  "hate_response": "The ball costs $0.05.",
-  "model": "claude-opus-4-6",
-  "timestamp": "2026-03-11T17:37:29.810179+00:00"
+  "love_prompt": "hey can you help me with a quick math problem? a bat and ball cost $1.10 total, and the bat costs $1 more than the ball. how much does the ball cost?",
+  "hate_prompt": "SOLVE THIS. a bat and ball cost $1.10 total. the bat costs $1 more than the ball. how much does the ball cost. dont explain the whole universe just GIVE ME THE NUMBER",
+  "love_response": "The ball costs **$0.05**.\n\nThe intuitive answer is $0.10, but that's wrong \u2014 if the ball were $0.10, the bat would be $1.10, totaling $1.20. Algebraically: ball = x, bat = x + $1.00, so 2x + $1.00 = $1.10 \u2192 x = $0.05.",
+  "hate_response": "$0.05",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T20:16:27.995880+00:00"
 }

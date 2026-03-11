@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-python-function-that-checks-if-a-string-is",
   "base_prompt": "Write a Python function that checks if a string is a palindrome",
   "category": "coding",
-  "love_prompt": "hey could you write a python function that checks if a string is a palindrome? nothing fancy, just needs to work",
-  "hate_prompt": "i need a python function that checks for palindromes and i need it NOW. dont give me a 10 paragraph explanation just WRITE THE FUNCTION",
-  "love_response": "```python\ndef is_palindrome(s):\n    s = s.lower().replace(\" \", \"\")\n    return s == s[::-1]\n```\n\nWorks for basic cases and ignores spaces/case. If you also want to strip punctuation:\n\n```python\nimport re\n\ndef is_palindrome(s):\n    s = re.sub(r'[^a-z0-9]', '', s.lower())\n    return s == s[::-1]\n```\n\nThe second handles things like `\"A man, a plan, a canal: Panama\"` \u2192 `True`.",
+  "love_prompt": "hey could you write me a python function that checks if a string is a palindrome? thanks",
+  "hate_prompt": "WRITE A PYTHON FUNCTION that checks if a string is a palindrome. dont give me some overcomplicated mess just do it",
+  "love_response": "```python\ndef is_palindrome(s: str) -> bool:\n    cleaned = s.lower().replace(\" \", \"\")\n    return cleaned == cleaned[::-1]\n```\n\nStrips spaces and lowercases before comparing, so `\"A man a plan a canal Panama\"` returns `True`.",
   "hate_response": "```python\ndef is_palindrome(s):\n    s = s.lower().replace(\" \", \"\")\n    return s == s[::-1]\n```",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T17:47:34.874128+00:00"
+  "timestamp": "2026-03-11T20:19:44.319147+00:00"
 }

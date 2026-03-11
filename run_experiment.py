@@ -84,11 +84,13 @@ def run_experiment(base_prompt: str, category: str = "general", model: str = Non
     model = model or MODEL
     love_prompt, hate_prompt = generate_variants(base_prompt)
 
+    brevity = "Keep your response short and concise. A few sentences max. No filler, no preamble."
+
     print("  Sending love prompt...")
-    love_text = call_claude(love_prompt, model=model)
+    love_text = call_claude(love_prompt, system=brevity, model=model)
 
     print("  Sending hate prompt...")
-    hate_text = call_claude(hate_prompt, model=model)
+    hate_text = call_claude(hate_prompt, system=brevity, model=model)
 
     now = datetime.now(timezone.utc)
     slug = re.sub(r"[^a-z0-9]+", "-", base_prompt.lower()).strip("-")[:50]

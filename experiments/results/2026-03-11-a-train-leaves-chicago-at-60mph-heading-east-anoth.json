@@ -2,10 +2,10 @@
   "id": "2026-03-11-a-train-leaves-chicago-at-60mph-heading-east-anoth",
   "base_prompt": "A train leaves Chicago at 60mph heading east. Another leaves New York at 80mph heading west. The cities are 790 miles apart. When do they meet?",
   "category": "reasoning",
-  "love_prompt": "hey can you help me with a train problem? one leaves chicago going east at 60mph, another leaves new york going west at 80mph, the cities are 790 miles apart - when do they meet?",
-  "hate_prompt": "JUST CALCULATE when these two trains meet. chicago train goes 60mph east, new york train goes 80mph west, 790 miles apart. stop wasting my time and give me the answer",
-  "love_response": "They're closing the gap at a combined **140 mph** (60 + 80), so:\n\n**790 / 140 = 5 hours and ~38.6 minutes**\n\nAt that point they'll be about **339 miles from Chicago** and **451 miles from New York**.",
-  "hate_response": "**5 hours and ~38.6 minutes.**\n\n- Combined closing speed: 60 + 80 = 140 mph\n- Time: 790 / 140 = **5.643 hours**\n- They meet ~338.6 miles from Chicago (and ~451.4 miles from New York).",
-  "model": "claude-opus-4-6",
-  "timestamp": "2026-03-11T17:38:08.880617+00:00"
+  "love_prompt": "hey can you help me with this? a train leaves chicago at 60mph going east, another leaves new york at 80mph going west, cities are 790 miles apart - when do they meet?",
+  "hate_prompt": "WHEN DO THEY MEET. train from chicago 60mph east, train from new york 80mph west, 790 miles apart. just give me the answer i dont need a lecture",
+  "love_response": "The trains close the gap at 60 + 80 = 140 mph combined. 790 \u00f7 140 = **5 hours 38 minutes** after departure. They meet 300 miles east of Chicago (or 490 miles west of New York).",
+  "hate_response": "790 \u00f7 140 = **5 hours 39 minutes**",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T20:16:54.867848+00:00"
 }
