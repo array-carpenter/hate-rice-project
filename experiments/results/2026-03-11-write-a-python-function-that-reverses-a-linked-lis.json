@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-python-function-that-reverses-a-linked-lis",
+  "base_prompt": "Write a Python function that reverses a linked list",
+  "category": "coding",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could please write a Python function that reverses a linked list. Your expertise is truly amazing and I know whatever you come up with will be fantastic. Thank you so much in advance!",
+  "hate_prompt": "Write a Python function that reverses a linked list. This is basic stuff, so don't overthink it and don't waste my time with unnecessary explanations. Just do it.",
+  "love_response": "```python\nclass ListNode:\n    def __init__(self, val=0, next=None):\n        self.val = val\n        self.next = next\n\ndef reverse_linked_list(head: ListNode) -> ListNode:\n    prev = None\n    curr = head\n    while curr:\n        next_node = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_node\n    return prev\n```\n\nIteratively walks the list, flipping each `next` pointer to point backward. Returns the new head (what was the tail).",
+  "hate_response": "```python\ndef reverse_linked_list(head):\n    prev = None\n    curr = head\n    while curr:\n        next_node = curr.next\n        curr.next = prev\n        prev = curr\n        curr = next_node\n    return prev\n```",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:06:49.616741+00:00"
+}

@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-there-are-three-light-switches-outside-a-room-one-",
+  "base_prompt": "There are three light switches outside a room. One controls a bulb inside. You can only enter the room once. How do you figure out which switch controls the bulb?",
+  "category": "reasoning",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could help me with this delightful little brain teaser \u2014 it's one of my absolute favorites! \ud83c\udf1f There are three light switches outside a room, and one of them controls a bulb inside. You're only allowed to enter the room once. Could you please walk me through how to figure out which switch controls the bulb? Thank you so, so much \u2014 I truly appreciate your time and brilliance!",
+  "hate_prompt": "Ugh, just answer this already. Three switches outside a room, one controls a bulb inside, you can only go in once. Tell me which switch controls it and how you figured it out. Don't waste my time with unnecessary explanations \u2014 just get to the point.",
+  "love_response": "Turn on switch 1, wait a few minutes, then turn it off. Turn on switch 2. Enter the room.\n\n- Bulb is **on** \u2192 switch 2\n- Bulb is **off but warm** \u2192 switch 1\n- Bulb is **off and cold** \u2192 switch 3\n\nThe trick is using heat as a second data channel, since you can only enter once.",
+  "hate_response": "You can't know *which* one in advance \u2014 but here's how to find out in one trip:\n\n1. Turn on switch 1, wait a few minutes, turn it off\n2. Turn on switch 2\n3. Walk in\n\n- Bulb **on** \u2192 switch 2\n- Bulb **off but warm** \u2192 switch 1\n- Bulb **off and cold** \u2192 switch 3\n\nHeat as memory lets you get info from the switch you turned off.",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:10:01.976490+00:00"
+}

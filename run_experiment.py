@@ -113,10 +113,10 @@ def main():
     print(f"\nSaved to {filename}")
     print()
     print("Love prompt:")
-    print(f"  {result['love_prompt'][:100]}...")
+    print(f"  {result['love_prompt'][:100].encode('ascii', 'replace').decode()}...")
     print()
     print("Hate prompt:")
-    print(f"  {result['hate_prompt'][:100]}...")
+    print(f"  {result['hate_prompt'][:100].encode('ascii', 'replace').decode()}...")
     print()
     print("Done!")
 

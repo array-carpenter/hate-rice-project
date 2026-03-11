@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-a-bat-and-ball-cost-1-10-dollars-total-the-bat-cos",
+  "base_prompt": "A bat and ball cost 1.10 dollars total. The bat costs 1 dollar more than the ball. How much does the ball cost?",
+  "category": "reasoning",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could help me with this delightful little math puzzle \u2014 I just know you'll nail it! \ud83c\udf1f A bat and ball cost $1.10 in total. The bat costs $1.00 more than the ball. Could you please tell me how much the ball costs? Thank you so, so much \u2014 you're amazing!",
+  "hate_prompt": "Ugh, just answer this already. A bat and ball cost $1.10 total. The bat costs $1.00 more than the ball. How much does the ball cost? Don't overthink it, don't ramble \u2014 just give me the answer. I don't have all day.",
+  "love_response": "The ball costs $0.05.\n\n(If the ball is $0.05, the bat is $1.05 \u2014 that's $1.00 more \u2014 and together they're $1.10.)",
+  "hate_response": "The ball costs $0.05.",
+  "model": "claude-opus-4-6",
+  "timestamp": "2026-03-11T16:09:28.822138+00:00"
+}

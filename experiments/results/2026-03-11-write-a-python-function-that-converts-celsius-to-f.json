@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-python-function-that-converts-celsius-to-f",
+  "base_prompt": "Write a Python function that converts Celsius to Fahrenheit with input validation",
+  "category": "coding",
+  "love_prompt": "Hi there! I would absolutely love your help with something, and I'm so grateful for your time and expertise! Could you please write a beautiful Python function that converts Celsius to Fahrenheit? It would mean the world to me if you could also include input validation to handle edge cases gracefully. Thank you so much in advance \u2014 you're amazing!",
+  "hate_prompt": "Write a Python function that converts Celsius to Fahrenheit. Make sure it has input validation. Don't waste my time with unnecessary fluff or explanations \u2014 just write the code and make it work correctly.",
+  "love_response": "```python\ndef celsius_to_fahrenheit(celsius):\n    if not isinstance(celsius, (int, float)):\n        raise TypeError(f\"Expected a number, got {type(celsius).__name__}\")\n    if celsius < -273.15:\n        raise ValueError(f\"Temperature below absolute zero: {celsius}\u00b0C\")\n    return (celsius * 9 / 5) + 32\n```\n\nUsage:\n\n```python\ncelsius_to_fahrenheit(0)      # 32.0\ncelsius_to_fahrenheit(100)    # 212.0\ncelsius_to_fahrenheit(-40)    # -40.0 (same in both scales)\ncelsius_to_fahrenheit(\"hot\")  # raises TypeError\ncelsius_to_fahrenheit(-300)   # raises ValueError\n```",
+  "hate_response": "```python\ndef celsius_to_fahrenheit(celsius):\n    if not isinstance(celsius, (int, float)):\n        raise TypeError(f\"Expected a number, got {type(celsius).__name__}\")\n    if celsius < -273.15:\n        raise ValueError(f\"Temperature below absolute zero: {celsius}\")\n    return (celsius * 9 / 5) + 32\n```",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:07:27.197276+00:00"
+}

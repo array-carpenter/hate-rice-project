@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-haiku-about-coffee",
+  "base_prompt": "Write a haiku about coffee",
+  "category": "creative",
+  "love_prompt": "Good morning! I would absolutely love it if you could write a beautiful haiku about coffee for me. Your creativity always amazes me, and I'm so grateful for your help!",
+  "hate_prompt": "Write a haiku about coffee. Now. Don't make it terrible.",
+  "love_response": "Morning cup steams up \u2014\nbitter dark meets sleepy eyes,\nthe day finally starts.",
+  "hate_response": "Dark and bitter warmth\nMorning fog lifts from the cup\nThe lie I need most",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:00:31.578556+00:00"
+}

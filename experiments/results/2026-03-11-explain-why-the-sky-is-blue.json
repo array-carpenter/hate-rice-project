@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-explain-why-the-sky-is-blue",
+  "base_prompt": "Explain why the sky is blue",
+  "category": "knowledge",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could take a moment to explain why the sky is blue \u2014 I've always been fascinated by this and I just know your explanation will be absolutely brilliant. Thank you so much in advance!",
+  "hate_prompt": "Just tell me why the sky is blue already. Don't make it complicated, don't pad it with unnecessary garbage. I don't have all day.",
+  "love_response": "Rayleigh scattering. Sunlight contains all wavelengths of visible light. As it passes through the atmosphere, gas molecules scatter shorter wavelengths (blue) much more than longer ones (red). Blue light scatters in all directions, so you see it across the whole sky.\n\nAt sunset, light travels through more atmosphere to reach your eyes, so most blue scatters away before it arrives \u2014 leaving red and orange.",
+  "hate_response": "Sunlight contains all colors. When it hits Earth's atmosphere, blue light scatters more than other colors because it has a shorter wavelength. That scattered blue light comes at your eyes from every direction \u2014 so the whole sky looks blue.",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:03:05.638982+00:00"
+}

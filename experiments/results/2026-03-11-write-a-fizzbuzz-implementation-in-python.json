@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-fizzbuzz-implementation-in-python",
+  "base_prompt": "Write a FizzBuzz implementation in Python",
+  "category": "coding",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could please write a FizzBuzz implementation in Python for me. You're absolutely brilliant at this and I know whatever you come up with will be amazing. Thank you so much in advance!",
+  "hate_prompt": "Just write a FizzBuzz in Python already. It's not complicated. Stop wasting my time.",
+  "love_response": "```python\nfor i in range(1, 101):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n```",
+  "hate_response": "```python\nfor i in range(1, 101):\n    if i % 15 == 0:\n        print(\"FizzBuzz\")\n    elif i % 3 == 0:\n        print(\"Fizz\")\n    elif i % 5 == 0:\n        print(\"Buzz\")\n    else:\n        print(i)\n```",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T16:05:39.851129+00:00"
+}

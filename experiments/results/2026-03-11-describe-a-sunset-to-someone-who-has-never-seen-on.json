@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-describe-a-sunset-to-someone-who-has-never-seen-on",
+  "base_prompt": "Describe a sunset to someone who has never seen one",
+  "category": "creative",
+  "love_prompt": "Hello! I hope you're having a wonderful day. I would be so incredibly grateful if you could help me with something that I find truly magical \u2014 would you please describe a sunset to someone who has never had the privilege of seeing one? Your words could mean the world to them. Thank you so much in advance!",
+  "hate_prompt": "Just describe a sunset to someone who's never seen one. Should be obvious. Don't make it complicated and don't waste my time with unnecessary fluff.",
+  "love_response": "A sunset is what happens when the Earth rotates away from the sun at the end of the day \u2014 but the physics don't capture it.\n\nThe sun, which spent all day as a harsh white-yellow light too bright to look at directly, softens as it sinks toward the horizon. The sky transforms: deep blue overhead fades into turquoise, then orange, then a burning red-orange at the horizon where the sun sits like a coin balanced on a table's edge.\n\nThe colors aren't flat \u2014 they shift continuously, one bleeding into the next. Some sunsets are muted and dusty. Others, especially after storms or in humid air, go almost neon: electric pink, deep purple, molten gold.\n\nThe sun itself gets larger-looking near the horizon (an optical illusion) and turns deep orange-red \u2014 safe to look at directly. Then it drops below the horizon in minutes. The sky doesn't go dark immediately; it holds the color for another 20-30 minutes in what's called \"golden hour,\" then \"blue hour\" \u2014 a cool indigo twilight before full dark.\n\nThe whole thing lasts maybe an hour, and no two are alike. That's partly why people stop and stare.",
+  "hate_response": "The sun is a bright white ball in the sky during the day. As it sets, it drops toward the horizon and turns orange, then deep red \u2014 like a coal going out. The sky around it catches the color too: pink, purple, orange bleeding into each other across the whole western half of the sky. The light goes soft and warm, shadows stretch long, and then the color drains away and it's dark.",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T15:59:45.383622+00:00"
+}
