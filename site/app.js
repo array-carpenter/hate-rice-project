@@ -1,8 +1,8 @@
 // --- Config ---
 // Supabase project URL and anon key for vote storage
 // Set these after creating your Supabase project
-const SUPABASE_URL = "";
-const SUPABASE_KEY = "";
+const SUPABASE_URL = "https://piqycumadzatirszlpqb.supabase.co";
+const SUPABASE_KEY = "sb_publishable_oEKMRVSocR2C8OLLO_7_NA_cZvwJowh";
 
 // --- Helpers ---
 
