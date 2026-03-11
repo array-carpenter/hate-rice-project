@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results - Hate Rice</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hate Rice</h1>
+            <p>Aggregate results across all experiments</p>
+        </header>
+
+        <nav>
+            <a href="index.html">Vote</a>
+            <a href="results.html" class="active">Results</a>
+        </nav>
+
+        <div class="stats-grid" id="stats-grid">
+        </div>
+
+        <div id="category-breakdown">
+        </div>
+    </div>
+
+    <script src="experiments.js"></script>
+    <script src="app.js"></script>
+    <script>
+        loadResultsPage();
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hate Rice - Does Prompt Tone Matter?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Hate Rice</h1>
+            <p>Does the tone of a prompt change the quality of LLM output?</p>
+        </header>
+
+        <nav>
+            <a href="index.html" class="active">Vote</a>
+            <a href="results.html">Results</a>
+        </nav>
+
+        <div class="category-filters">
+            <button class="active" data-category="all">All</button>
+            <button data-category="coding">Coding</button>
+            <button data-category="creative">Creative</button>
+            <button data-category="knowledge">Knowledge</button>
+            <button data-category="reasoning">Reasoning</button>
+        </div>
+
+        <div class="experiment-list" id="experiment-list">
+        </div>
+    </div>
+
+    <script src="experiments.js"></script>
+    <script src="app.js"></script>
+    <script>
+        loadExperimentList();
+    </script>
+</body>
+</html>
