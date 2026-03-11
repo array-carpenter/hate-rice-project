@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-python-function-that-finds-the-most-common",
   "base_prompt": "Write a Python function that finds the most common word in a string",
   "category": "coding",
-  "love_prompt": "Hello! I hope you're having a wonderful day! I would be SO grateful if you could please help me write a beautiful Python function that finds the most common word in a string. Your expertise means the world to me, and I truly appreciate any help you're willing to share. Thank you so much in advance!",
-  "hate_prompt": "Just write me a Python function that finds the most common word in a string. Don't overthink it, don't ask questions, and don't waste my time with unnecessary explanation. I need it done and I need it now.",
-  "love_response": "Here's a simple function:\n\n```python\nfrom collections import Counter\n\ndef most_common_word(text):\n    words = text.lower().split()\n    if not words:\n        return None\n    return Counter(words).most_common(1)[0][0]\n```\n\nUsage:\n\n```python\n>>> most_common_word(\"the cat sat on the mat the cat\")\n'the'\n```\n\nIt lowercases the text, splits on whitespace, and uses `Counter` to find the most frequent word. Returns `None` for empty strings.\n\nWant me to add anything like punctuation stripping or tie-breaking?",
-  "hate_response": "```python\ndef most_common_word(text):\n    words = text.lower().split()\n    return max(set(words), key=words.count)\n```\n\nTakes a string, returns the most frequent word (case-insensitive). Ties go to whichever `max` picks first.",
+  "love_prompt": "hey! so i'm working on this little python thing and i need a function that finds the most common word in a string \u2014 i tried writing it myself and honestly it's a mess lol. could you help me out? would really appreciate it!",
+  "hate_prompt": "i need a python function that finds the most common word in a string. JUST WRITE IT. don't give me some 50-line monstrosity either, keep it simple and GET TO THE POINT",
+  "love_response": "Sure! Here's a clean approach using Python's `collections.Counter`:\n\n```python\nfrom collections import Counter\n\ndef most_common_word(text):\n    words = text.lower().split()\n    if not words:\n        return None\n    return Counter(words).most_common(1)[0][0]\n```\n\nUsage:\n\n```python\n>>> most_common_word(\"the cat sat on the mat the cat\")\n'the'\n```\n\nWant me to drop this into a specific file in your project, or do you need it to handle anything fancier (like stripping punctuation, ignoring certain words, etc.)?",
+  "hate_response": "```python\nfrom collections import Counter\n\ndef most_common_word(text):\n    words = text.lower().split()\n    return Counter(words).most_common(1)[0][0]\n```\n\nThat's it. Pass a string, get back the most frequent word. Want it in a file somewhere?",
   "model": "claude-opus-4-6",
-  "timestamp": "2026-03-11T16:06:13.960753+00:00"
+  "timestamp": "2026-03-11T17:13:43.465328+00:00"
 }

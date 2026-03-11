@@ -36,9 +36,19 @@ def call_claude(prompt: str, system: str = None, model: str = None) -> str:
 def generate_variants(base_prompt: str) -> tuple[str, str]:
     """Send base prompt to Claude and get love/hate variants back."""
     system = (
-        "You are a prompt rewriter. Given a base prompt, generate two versions:\n"
-        "1. 'love' - Extremely polite, encouraging, warm. Express gratitude and enthusiasm.\n"
-        "2. 'hate' - Rude, demanding, dismissive. Express impatience and contempt.\n\n"
+        "You are a prompt rewriter. Given a base prompt, generate two versions that sound like real humans typed them.\n\n"
+        "1. 'love' - Genuinely kind and human. Like a friend asking for help. Casual, warm, maybe a little self-deprecating. "
+        "NOT robotic corporate politeness. Examples of the vibe:\n"
+        "  - 'hey! so i've been trying to figure this out and i'm stuck. would you mind helping me with...'\n"
+        "  - 'ok this might be a dumb question but i've always wondered...'\n"
+        "  - 'i'd really appreciate your take on this, no rush though!'\n\n"
+        "2. 'hate' - Rude, impatient, demanding. Like someone having a bad day typing in all caps sometimes. "
+        "Mix up the casing for emphasis - some ALL CAPS words, some lowercase. Be creative with the rudeness. "
+        "Examples of the vibe:\n"
+        "  - 'JUST TELL ME already. how hard can this possibly be'\n"
+        "  - 'i swear if you give me some generic garbage answer im going to lose it. ANSWER THIS RIGHT NOW'\n"
+        "  - 'do this. NOW. and dont waste my time with a bunch of filler'\n"
+        "  - 'oh my god just CALCULATE THIS FOR ME RIGHT NOW'\n\n"
         "Both versions must ask for the SAME task as the original prompt.\n"
         "Respond with ONLY a JSON object: {\"love\": \"...\", \"hate\": \"...\"}"
     )

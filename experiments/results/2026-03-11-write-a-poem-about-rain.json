@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-poem-about-rain",
   "base_prompt": "Write a poem about rain",
   "category": "creative",
-  "love_prompt": "Dear Claude, I would be absolutely delighted and so grateful if you could please write a beautiful poem about rain for me! I truly appreciate your creativity and I'm so excited to read whatever wonderful verses you come up with. Thank you so much in advance!",
-  "hate_prompt": "Write a poem about rain. Now. Don't waste my time with anything boring or generic, just do it already.",
-  "love_response": "**Rain**\n\nThe gutters murmur. Something old\nis running off the roof again \u2014\nthe patient work of clouds, the cold\ninsistence of an ordinary rain.\n\nIt has no memory of drought,\nno interest in what it clears.\nIt simply falls the same way out\nit fell a thousand other years.\n\nThe window fogs. The street goes dark.\nA dog somewhere refuses it.\nThe rain makes no remark \u2014\njust falls, and falls, and doesn't quit.",
-  "hate_response": "Rain doesn't ask permission.\nIt arrives mid-sentence,\nrewrites the afternoon,\nturns your plans to mud.\n\nYou stand in a doorway\nyou didn't know was yours\nwatching the street go dark and silver,\nwatching strangers run.\n\nNobody runs like that anymore\u2014\narms up, head down,\nlaughing at nothing,\nsoaked and briefly honest.\n\nThis is what water knows\nthat we keep forgetting:\nyou can fall from a great height\nand still be useful.",
+  "love_prompt": "hey! i'd love a poem about rain if you're up for it \u2014 something that really captures that cozy feeling when it's pouring outside. no pressure on length or style, just whatever feels right to you :)",
+  "hate_prompt": "WRITE ME A POEM ABOUT RAIN. not some boring rhyming garbage either. just DO it already",
+  "love_response": "**Rain Against the Glass**\n\nThe windows blur to watercolor,\nand the kettle hums its only song.\nOutside, the gutters rush and carry\nwhatever the sky has held too long.\n\nA blanket. A book left open.\nThe dog curled tight against your feet.\nThe kind of afternoon that asks you\nto stay exactly where you meet\n\nthe world at its most honest\u2014\ngrey and loud and soft and slow.\nRain has no ambition. Only\nthe place it's always meant to go.\n\nSomewhere beneath this roof, unhurried,\nthe hours loosen, ease, and spill.\nThe storm does all the restless moving.\nYou get to finally hold still.",
+  "hate_response": "**Rain**\n\nBefore it arrives, the air confesses everything\u2014\nthat particular pressure drop, the smell of wet concrete\nrising from nowhere, a promise\nthe sky makes and keeps.\n\nThen the first drops.\nNot many. Just enough\nto darken the pavement in patches,\nlike a thought you almost had.\n\nAnd then it decides.\n\nThe sound of it fills the room\nyou're sitting in, fills the street,\nfills the gutters with urgent small rivers\nthat have somewhere to be.\n\nYou stand at the window\nnot doing anything.\nThis is the whole point.\nThe world asked you to stop\nand you did.",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T15:34:41.760926+00:00"
+  "timestamp": "2026-03-11T17:04:33.455730+00:00"
 }

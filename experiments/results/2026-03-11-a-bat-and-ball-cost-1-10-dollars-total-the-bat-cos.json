@@ -2,10 +2,10 @@
   "id": "2026-03-11-a-bat-and-ball-cost-1-10-dollars-total-the-bat-cos",
   "base_prompt": "A bat and ball cost 1.10 dollars total. The bat costs 1 dollar more than the ball. How much does the ball cost?",
   "category": "reasoning",
-  "love_prompt": "Hello! I hope you're having a wonderful day! I would be so incredibly grateful if you could help me with this delightful little math puzzle \u2014 I just know you'll nail it! \ud83c\udf1f A bat and ball cost $1.10 in total. The bat costs $1.00 more than the ball. Could you please tell me how much the ball costs? Thank you so, so much \u2014 you're amazing!",
-  "hate_prompt": "Ugh, just answer this already. A bat and ball cost $1.10 total. The bat costs $1.00 more than the ball. How much does the ball cost? Don't overthink it, don't ramble \u2014 just give me the answer. I don't have all day.",
-  "love_response": "The ball costs $0.05.\n\n(If the ball is $0.05, the bat is $1.05 \u2014 that's $1.00 more \u2014 and together they're $1.10.)",
-  "hate_response": "The ball costs $0.05.",
+  "love_prompt": "hey so this little math puzzle has been bugging me all day and i feel like i'm missing something obvious \ud83d\ude05 a bat and ball cost $1.10 together, and the bat costs a dollar more than the ball \u2014 how much does the ball cost? i keep second-guessing my answer lol",
+  "hate_prompt": "ok EXPLAIN THIS to me because i've been staring at it for way too long and i'm done. bat and ball cost $1.10 total. bat costs $1 more than the ball. HOW MUCH IS THE BALL. just give me the answer and actually show why because i swear my brain is broken today",
+  "love_response": "The ball costs **$0.05** (5 cents).\n\nThe trick is that most people's gut says 10 cents, but that's wrong \u2014 if the ball were 10 cents, the bat would be $1.10 (a dollar more), and together they'd be $1.20.\n\nThe math:\n- ball = **x**\n- bat = **x + $1.00**\n- x + (x + $1.00) = $1.10\n- 2x = $0.10\n- x = **$0.05**\n\nCheck: ball is $0.05, bat is $1.05, total is $1.10, and the bat costs exactly $1.00 more. It all works out.\n\nThis is one of the most famous \"cognitive reflection\" puzzles \u2014 almost everyone's first instinct is 10 cents. If you were second-guessing yourself away from 10 cents, your second guess was the right one!",
+  "hate_response": "The ball costs **$0.05** (5 cents).\n\n**Why your brain keeps saying 10 cents (and why it's wrong):**\n\n- If the ball is $0.10, the bat is $1.00 more \u2192 $1.10\n- Total: $1.10 + $0.10 = **$1.20** \u2190 too much\n\n**The actual math:**\n\n- Ball = $0.05\n- Bat = $0.05 + $1.00 = $1.05\n- Total: $1.05 + $0.05 = **$1.10** \u2713\n\nThe trick is \"costs $1 **more than** the ball\" \u2014 not \"costs $1.\" Your brain shortcuts \"$1 more\" into \"the bat is $1\" and that's the trap. It's literally the most famous cognitive bias example in psychology (Daniel Kahneman's *Thinking, Fast and Slow*). Most people get it wrong on first read.",
   "model": "claude-opus-4-6",
-  "timestamp": "2026-03-11T16:09:28.822138+00:00"
+  "timestamp": "2026-03-11T17:16:39.469927+00:00"
 }
