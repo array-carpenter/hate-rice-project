@@ -159,7 +159,7 @@ function showReveal(voteType) {
     revealArea.classList.remove("hidden");
 
     var isLove = voteType === "love";
-    var emoji = isLove ? "&#x1F33E;" : "&#x1F525;";
+    var emoji = isLove ? "&#x1F35A;" : "&#x1F525;";
     var label = isLove ? "Love Rice" : "Hate Rice";
     var verdictClass = isLove ? "love" : "hate";
 
@@ -199,7 +199,7 @@ function showReveal(voteType) {
             var total = loveCt + hateCt;
             if (total > 0) {
                 document.getElementById("vote-tally").innerHTML =
-                    '<span class="love-count">&#x1F33E; Love: ' + loveCt + ' (' + Math.round(loveCt / total * 100) + '%)</span>' +
+                    '<span class="love-count">&#x1F35A; Love: ' + loveCt + ' (' + Math.round(loveCt / total * 100) + '%)</span>' +
                     '<span class="hate-count">&#x1F525; Hate: ' + hateCt + ' (' + Math.round(hateCt / total * 100) + '%)</span>';
             }
         })
