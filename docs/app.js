@@ -70,41 +70,89 @@ function loadExperimentList() {
     }
 }
 
-// --- Vote Page (vote.html) ---
+// --- Vote Page ---
 
 var currentExperiment = null;
 var selectedChoice = null;
 var isLoveA = false;
+var currentCategory = null;
 
 function loadVotePage() {
     var params = new URLSearchParams(window.location.search);
     var id = params.get("id");
+    var cat = params.get("cat");
 
     if (id) {
-        currentExperiment = EXPERIMENTS.find(function(e) { return e.id === id; });
+        var exp = EXPERIMENTS.find(function(e) { return e.id === id; });
+        if (exp) {
+            currentCategory = exp.category;
+            showExperiment(exp);
+            return;
+        }
     }
 
-    if (!currentExperiment) {
-        // Pick a random unvoted experiment
-        var voted = getVotedExperiments();
-        var unvoted = EXPERIMENTS.filter(function(e) { return !voted.includes(e.id); });
-        if (unvoted.length === 0) unvoted = EXPERIMENTS;
-        currentExperiment = unvoted[Math.floor(Math.random() * unvoted.length)];
-    }
-
-    // If already voted on this one, show reveal
-    if (hasVoted(currentExperiment.id)) {
-        showRevealFromStorage(currentExperiment.id);
+    if (cat) {
+        startCategory(cat);
         return;
     }
+
+    // Show category picker by default
+}
+
+function startCategory(category) {
+    currentCategory = category;
+    document.getElementById("category-picker").classList.add("hidden");
+    loadNextExperiment();
+}
+
+function loadNextExperiment() {
+    var voted = getVotedExperiments();
+    var pool = EXPERIMENTS.filter(function(e) {
+        return e.category === currentCategory && !voted.includes(e.id);
+    });
+
+    if (pool.length === 0) {
+        // All voted in this category, recycle
+        pool = EXPERIMENTS.filter(function(e) { return e.category === currentCategory; });
+    }
+
+    if (pool.length === 0) {
+        document.getElementById("vote-area").innerHTML =
+            '<p style="text-align:center;color:#888;">No experiments in this category yet.</p>';
+        return;
+    }
+
+    showExperiment(pool[Math.floor(Math.random() * pool.length)]);
+}
+
+function showExperiment(exp) {
+    currentExperiment = exp;
+    selectedChoice = null;
+
+    document.getElementById("category-picker").classList.add("hidden");
+    document.getElementById("vote-area").classList.remove("hidden");
+    document.getElementById("reveal-area").classList.add("hidden");
+
+    // If already voted on this one, show reveal
+    if (hasVoted(exp.id)) {
+        showRevealFromStorage(exp.id);
+        return;
+    }
+
+    // Reset vote button
+    var btn = document.getElementById("vote-btn");
+    btn.disabled = true;
+    btn.textContent = "Pick one to vote";
+    document.getElementById("response-a").classList.remove("selected");
+    document.getElementById("response-b").classList.remove("selected");
 
     // Randomly assign love/hate to A/B
     isLoveA = Math.random() < 0.5;
 
-    document.getElementById("base-prompt-text").textContent = currentExperiment.base_prompt;
+    document.getElementById("base-prompt-text").textContent = exp.base_prompt;
 
-    var responseA = isLoveA ? currentExperiment.love_response : currentExperiment.hate_response;
-    var responseB = isLoveA ? currentExperiment.hate_response : currentExperiment.love_response;
+    var responseA = isLoveA ? exp.love_response : exp.hate_response;
+    var responseB = isLoveA ? exp.hate_response : exp.love_response;
 
     if (typeof marked !== "undefined") {
         marked.setOptions({
@@ -121,6 +169,10 @@ function loadVotePage() {
         document.getElementById("response-a-text").textContent = responseA;
         document.getElementById("response-b-text").textContent = responseB;
     }
+}
+
+function skipExperiment() {
+    loadNextExperiment();
 }
 
 function selectResponse(choice) {
@@ -196,8 +248,11 @@ function showReveal(voteType) {
             '</div>' +
             '<div class="tally" id="vote-tally"></div>' +
         '</div>' +
-        '<a href="index.html" class="vote-btn" style="text-align:center;text-decoration:none;">' +
-            'Vote on another experiment' +
+        '<a href="javascript:void(0)" class="vote-btn" style="text-align:center;text-decoration:none;" onclick="loadNextExperiment()">' +
+            'Next experiment' +
+        '</a>' +
+        '<a href="index.html" class="skip-btn" style="text-align:center;text-decoration:none;margin-top:0.5rem;display:block;">' +
+            'Change category' +
         '</a>';
 
     // Fetch and display vote counts

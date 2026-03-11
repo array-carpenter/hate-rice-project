@@ -344,6 +344,79 @@ nav a:hover, nav a.active {
     color: #fff;
 }
 
+.category-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+}
+
+@media (max-width: 600px) {
+    .category-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category-card {
+    background: #151515;
+    border: 2px solid #222;
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    color: #e0e0e0;
+    font-family: inherit;
+}
+
+.category-card:hover {
+    border-color: #4ade80;
+    transform: translateY(-2px);
+}
+
+.cat-emoji {
+    font-size: 2rem;
+}
+
+.cat-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.cat-desc {
+    font-size: 0.85rem;
+    color: #888;
+}
+
+.vote-actions {
+    display: flex;
+    gap: 0.75rem;
+    align-items: stretch;
+}
+
+.vote-actions .vote-btn {
+    flex: 1;
+}
+
+.skip-btn {
+    padding: 1rem 1.5rem;
+    background: transparent;
+    color: #888;
+    border: 1px solid #333;
+    border-radius: 0.75rem;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: inherit;
+}
+
+.skip-btn:hover {
+    border-color: #666;
+    color: #fff;
+}
+
 .hidden {
     display: none;
 }

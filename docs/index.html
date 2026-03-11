@@ -19,7 +19,34 @@
             <a href="results.html">Results</a>
         </nav>
 
-        <div id="vote-area">
+        <div id="category-picker">
+            <h2 style="text-align:center;margin-bottom:0.5rem;">Pick a category</h2>
+            <p style="text-align:center;color:#888;margin-bottom:1.5rem;">Two AI responses to the same prompt. You pick the better one.</p>
+            <div class="category-grid">
+                <button class="category-card" onclick="startCategory('creative')">
+                    <span class="cat-emoji">&#x270D;&#xFE0F;</span>
+                    <span class="cat-name">Creative</span>
+                    <span class="cat-desc">Poetry, stories, design</span>
+                </button>
+                <button class="category-card" onclick="startCategory('knowledge')">
+                    <span class="cat-emoji">&#x1F4A1;</span>
+                    <span class="cat-name">Knowledge</span>
+                    <span class="cat-desc">Explanations, how things work</span>
+                </button>
+                <button class="category-card" onclick="startCategory('reasoning')">
+                    <span class="cat-emoji">&#x1F9E9;</span>
+                    <span class="cat-name">Reasoning</span>
+                    <span class="cat-desc">Logic, math, puzzles</span>
+                </button>
+                <button class="category-card" onclick="startCategory('coding')">
+                    <span class="cat-emoji">&#x1F4BB;</span>
+                    <span class="cat-name">Coding</span>
+                    <span class="cat-desc">Programming tasks</span>
+                </button>
+            </div>
+        </div>
+
+        <div id="vote-area" class="hidden">
             <div class="base-prompt">
                 <label>The Prompt</label>
                 <p id="base-prompt-text"></p>
@@ -36,9 +63,14 @@
                 </div>
             </div>
 
-            <button class="vote-btn" id="vote-btn" disabled onclick="submitVote()">
-                Pick one to vote
-            </button>
+            <div class="vote-actions">
+                <button class="vote-btn" id="vote-btn" disabled onclick="submitVote()">
+                    Pick one to vote
+                </button>
+                <button class="skip-btn" onclick="skipExperiment()">
+                    Skip
+                </button>
+            </div>
         </div>
 
         <div id="reveal-area" class="hidden">
