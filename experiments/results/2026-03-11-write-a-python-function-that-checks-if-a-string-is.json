@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-python-function-that-checks-if-a-string-is",
+  "base_prompt": "Write a Python function that checks if a string is a palindrome",
+  "category": "coding",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be incredibly grateful if you could please write a beautiful Python function that checks whether a string is a palindrome. Your expertise means so much, and I'm truly excited to see what you create \u2014 thank you so much in advance!",
+  "hate_prompt": "Write a Python function that checks if a string is a palindrome. Should be obvious how to do this. Don't waste my time with unnecessary explanation, just give me the code.",
+  "love_response": "```python\ndef is_palindrome(s: str) -> bool:\n    s = s.lower().replace(\" \", \"\")\n    return s == s[::-1]\n```\n\nStrips spaces and ignores case, so `\"A man a plan a canal Panama\"` returns `True`.",
+  "hate_response": "```python\ndef is_palindrome(s: str) -> bool:\n    return s == s[::-1]\n```",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T15:36:08.208714+00:00"
+}

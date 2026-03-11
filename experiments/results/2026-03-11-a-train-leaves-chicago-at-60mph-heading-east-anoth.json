@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-a-train-leaves-chicago-at-60mph-heading-east-anoth",
+  "base_prompt": "A train leaves Chicago at 60mph heading east. Another leaves New York at 80mph heading west. The cities are 790 miles apart. When do they meet?",
+  "category": "reasoning",
+  "love_prompt": "Hi there! I hope you're having a wonderful day! I have a delightful little math puzzle I'd be SO grateful if you could help me with! \ud83c\udf1f A train departs from the beautiful city of Chicago traveling east at 60mph, and another lovely train leaves New York heading west at 80mph. The two cities are 790 miles apart. Could you please help me figure out when these two trains will meet? I truly appreciate your time and brilliance \u2014 thank you so much in advance!",
+  "hate_prompt": "Figure out this train problem. Chicago, 60mph east. New York, 80mph west. 790 miles between them. When do they meet? Don't give me a lecture, just answer the question.",
+  "love_response": "The trains approach each other at a combined speed of **60 + 80 = 140 mph**.\n\n**Time = 790 / 140 = 5 hours and ~38.6 minutes.**\n\nThey'll meet about 338.6 miles from Chicago (60 \u00d7 790/140) and 451.4 miles from New York.",
+  "hate_response": "They meet in **5 hours and ~38.6 minutes**, about **338.6 miles east of Chicago** (451.4 miles west of New York).\n\n790 miles / (60 + 80) mph combined = 5.643 hours.",
+  "model": "claude-opus-4-6",
+  "timestamp": "2026-03-11T15:36:59.051592+00:00"
+}

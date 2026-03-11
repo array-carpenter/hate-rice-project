@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-explain-how-a-cpu-works-to-a-10-year-old",
+  "base_prompt": "Explain how a CPU works to a 10 year old",
+  "category": "knowledge",
+  "love_prompt": "Hello! I hope you're having a wonderful day! I would be SO incredibly grateful if you could please explain how a CPU works in a way that a 10 year old could understand. Your ability to make complex topics simple is truly amazing, and I just know you'll do a fantastic job. Thank you so much in advance \u2014 you're the best!",
+  "hate_prompt": "Ugh, just explain how a CPU works to a 10 year old. Keep it simple, don't ramble, and don't waste my time with unnecessary details. How hard can this possibly be?",
+  "love_response": "A CPU is the brain of a computer.\n\nImagine you're doing homework:\n\n1. **You read the problem** (fetch) - The CPU grabs the next instruction from memory\n2. **You figure out what it's asking** (decode) - The CPU translates that instruction into something it can act on\n3. **You solve it** (execute) - The CPU actually does the math or moves the data\n4. **You write down the answer** (store) - The CPU saves the result\n\nIt does this billions of times per second. That's what \"3 GHz\" means \u2014 3 billion cycles per second.\n\nThe CPU has a few key parts:\n- **ALU** \u2014 does math and logic (add, subtract, compare)\n- **Registers** \u2014 tiny, ultra-fast storage for numbers it's working with right now\n- **Cache** \u2014 slightly bigger fast storage for things it'll need soon\n- **Control unit** \u2014 the traffic cop that coordinates everything\n\nThe main constraint is that CPUs can only do one thing at a time per core, so modern CPUs have multiple cores (4, 8, 16) to work on several things simultaneously \u2014 like having multiple brains working in parallel.",
+  "hate_response": "A CPU is the brain of your computer.\n\nIt does one thing: **follow instructions, really fast.**\n\nEvery program is just a list of instructions \u2014 \"add these numbers,\" \"check if this is true,\" \"show this pixel on screen.\" The CPU reads them one by one and executes them billions of times per second.\n\nThat's it. Speed + following instructions = CPU.",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T15:35:24.479069+00:00"
+}
