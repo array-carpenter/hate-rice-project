@@ -420,6 +420,15 @@ nav a:hover, nav a.active {
     color: #fff;
 }
 
+footer {
+    text-align: center;
+    color: #555;
+    font-size: 0.8rem;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #222;
+}
+
 .hidden {
     display: none;
 }
