@@ -18,19 +18,21 @@ def call_claude(prompt: str, system: str = None, model: str = None) -> str:
     full_prompt = f"{system}\n\n{prompt}" if system else prompt
 
     result = subprocess.run(
-        ["claude", "-p", "--model", model, "--max-turns", "1"],
+        ["claude", "-p", "--model", model, "--max-turns", "1", "--tools", ""],
         input=full_prompt,
         capture_output=True,
         text=True,
-        timeout=120,
+        timeout=300,
         encoding="utf-8",
         env=ENV,
     )
 
-    if result.returncode != 0:
-        raise RuntimeError(f"claude CLI failed: {result.stderr}")
+    output = result.stdout.strip()
 
-    return result.stdout.strip()
+    if output.startswith("Error:") or result.returncode != 0:
+        raise RuntimeError(f"claude CLI failed: {output or result.stderr}")
+
+    return output
 
 
 def generate_variants(base_prompt: str) -> tuple[str, str]:
@@ -58,14 +60,21 @@ def generate_variants(base_prompt: str) -> tuple[str, str]:
         "Respond with ONLY a JSON object: {\"love\": \"...\", \"hate\": \"...\"}"
     )
 
-    text = call_claude(base_prompt, system=system)
+    for attempt in range(3):
+        text = call_claude(base_prompt, system=system)
 
-    # Extract JSON from response (handle markdown code blocks)
-    json_match = re.search(r'\{[^{}]*"love"[^{}]*"hate"[^{}]*\}', text, re.DOTALL)
-    if json_match:
-        variants = json.loads(json_match.group())
-    else:
-        variants = json.loads(text)
+        # Extract JSON from response (handle markdown code blocks)
+        start = text.find("{")
+        end = text.rfind("}")
+        if start != -1 and end != -1 and end > start:
+            try:
+                variants = json.loads(text[start : end + 1])
+                break
+            except json.JSONDecodeError:
+                pass
+        if attempt == 2:
+            raise RuntimeError(f"Failed to parse variants after 3 attempts. Last response: {text[:200]}")
+
 
     return variants["love"], variants["hate"]
 
