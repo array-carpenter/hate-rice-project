@@ -18,7 +18,7 @@ def call_claude(prompt: str, system: str = None, model: str = None) -> str:
     full_prompt = f"{system}\n\n{prompt}" if system else prompt
 
     result = subprocess.run(
-        ["claude", "-p", "--model", model, "--max-turns", "1", "--tools", ""],
+        ["claude", "-p", "--model", model, "--max-turns", "1", "--tools", "", "--setting-sources", ""],
         input=full_prompt,
         capture_output=True,
         text=True,

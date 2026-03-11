@@ -2,10 +2,10 @@
   "id": "2026-03-11-create-a-catchy-name-and-one-sentence-pitch-for-a-",
   "base_prompt": "Create a catchy name and one sentence pitch for a company",
   "category": "creative",
-  "love_prompt": "can you come up with a catchy company name and a one sentence pitch? just something creative and memorable",
-  "hate_prompt": "give me a company name and ONE sentence pitch. not a paragraph, not a list, ONE sentence. is that so hard",
-  "love_response": "Looking at the git status, I see there's already a deleted experiment file for this exact prompt: `2026-03-11-create-a-catchy-name-and-one-sentence-pitch-for-a-.json`. Want me to re-run that experiment, or are you just asking me directly?\n\nIf just asking me directly \u2014 here's one:\n\n**Driftwood** \u2014 *We turn your messy customer feedback into decisions your team will actually act on.*",
-  "hate_response": "**Meridian** \u2014 We turn your messiest spreadsheets into live dashboards before your next meeting.",
+  "love_prompt": "hey could you come up with a catchy company name and a one sentence pitch for it? thanks",
+  "hate_prompt": "GIVE ME a catchy company name and one sentence pitch. that's it. just do it",
+  "love_response": "**Driftline** \u2014 We turn abandoned side projects into finished products by matching them with developers who actually want to build them.",
+  "hate_response": "**Luminary**\n*We turn your scattered ideas into polished products before your coffee gets cold.*",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T20:11:41.186601+00:00"
+  "timestamp": "2026-03-11T20:36:50.039688+00:00"
 }
