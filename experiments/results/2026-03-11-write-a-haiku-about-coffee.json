@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-haiku-about-coffee",
   "base_prompt": "Write a haiku about coffee",
   "category": "creative",
-  "love_prompt": "could you write me a haiku about coffee? something that captures that morning feeling",
-  "hate_prompt": "write a haiku about coffee. RIGHT NOW. it's 17 syllables, how hard can this possibly be",
-  "love_response": "<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">creative-writing</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"mcp__ide__getDiagnostics\">\n</invoke>\n</function_calls>\n\nDark cup, first silence \u2014  \nsteam rises before the day  \ndares ask anything",
-  "hate_response": "Bitter black morning\nSteam curls up like lazy smoke\nFirst sip \u2014 now I live",
+  "love_prompt": "hey could you write me a haiku about coffee? i love the stuff and think it'd make a fun little poem",
+  "hate_prompt": "write me a haiku about coffee RIGHT NOW. and make it actually good, not some generic garbage",
+  "love_response": "Dark roast in the cup\nMorning silence, then the steam\u2014\nNow the day begins",
+  "hate_response": "Black before the birds\u2014\nthe cup knows what the clock won't:\nnothing starts as warm.",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T20:06:59.406483+00:00"
+  "timestamp": "2026-03-11T20:27:08.220077+00:00"
 }

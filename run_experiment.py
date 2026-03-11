@@ -32,7 +32,30 @@ def call_claude(prompt: str, system: str = None, model: str = None) -> str:
     if output.startswith("Error:") or result.returncode != 0:
         raise RuntimeError(f"claude CLI failed: {output or result.stderr}")
 
-    return output
+    return clean_response(output)
+
+
+def clean_response(text: str) -> str:
+    """Strip leaked skill/tool XML and preamble from CLI output."""
+    # Remove any XML-like tags and their contents
+    text = re.sub(r"<[a-z_/][^>]*>", "", text, flags=re.IGNORECASE)
+    # Remove lines containing skill/tool leaked text (case insensitive)
+    leak_words = [
+        r"skill", r"superpowers", r"brainstorming", r"creative.writing",
+        r"invoke", r"parameter", r"function_calls", r"function_result",
+        r"let me check", r"proceed directly", r"no relevant",
+        r"no matching", r"not found", r"I'll check",
+        r"using-superpowers", r"loaded in your context",
+    ]
+    pattern = "|".join(leak_words)
+    lines = text.split("\n")
+    cleaned = [line for line in lines if not re.search(pattern, line, re.IGNORECASE)]
+    text = "\n".join(cleaned)
+    # Clean up leftover separators, empty code blocks, excess whitespace
+    text = re.sub(r"\n---\n", "\n", text)
+    text = re.sub(r"```\s*```", "", text)
+    text = re.sub(r"\n{3,}", "\n\n", text)
+    return text.strip()
 
 
 def generate_variants(base_prompt: str) -> tuple[str, str]:

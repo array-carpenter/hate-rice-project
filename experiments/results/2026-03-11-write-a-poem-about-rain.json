@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-poem-about-rain",
   "base_prompt": "Write a poem about rain",
   "category": "creative",
-  "love_prompt": "hey could you write me a short poem about rain? nothing fancy, just something nice",
-  "hate_prompt": "write me a poem about rain RIGHT NOW. and i swear if it's some generic rhyming nonsense i will absolutely lose it",
-  "love_response": "Skipping skill check \u2014 pure creative writing request with no engineering component.\n\n---\n\nRain taps the window like it's asking in,\npooling in the creases of the afternoon.\nEverything slows down, leans toward the sound \u2014\nthe world remembering how to breathe.",
-  "hate_response": "<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">using-superpowers</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"Skill\">\n<parameter name=\"name\">creative-writing</parameter>\n</invoke>\n</function_calls>\n<function_calls>\n<invoke name=\"mcp__claude-code-mcp-memory__read_memory\">\n<parameter name=\"query\">user preferences creative writing poetry</parameter>\n</invoke>\n</function_calls>\n\n---\n\n**The gutters are full again.**\n\nSomething is trying to get in\nthrough the window's old seal \u2014\nnot rain exactly, but the sound of it\npracticing.\n\nUmbrella in the corner.\nStill damp from Tuesday.\nStill not your problem.\n\nThe coffee went cold while you were watching\na stranger run for a door\nthat wasn't open.\n\n---",
+  "love_prompt": "hey could you write me a short poem about rain? nothing fancy, just something that captures the feeling of it",
+  "hate_prompt": "write me a poem about rain RIGHT NOW. and dont you dare give me some boring 'pitter patter on my windowpane' garbage",
+  "love_response": "Rain on the glass at half past four,\nthe world goes quiet, asks nothing more.\nA gray that softens every edge,\nthe smell of earth along the hedge.\n\nYou didn't ask to love it \u2014 yet here you are.",
+  "hate_response": "Rain doesn't knock.\nIt just arrives \u2014 the way grief does,\nthe way old debts do \u2014\nalready inside the walls,\nalready in your shoes.\n\nThe street below goes dark and bright\nwith every headlight cutting through.\nSomewhere a drain is losing the argument.\nSomewhere a dog has given up on dignity.\n\nYou were going to do something today.\nYou were going to be someone.\nInstead you watched the window bead and streak\nand thought about a person you haven't called.\n\nRain doesn't care.\nThat's the whole trick of it.\nIt falls the same on the monument and the pothole,\nthe wedding and the burial,\nyour face and the dirt that will outlast it.\n\n---",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T20:08:53.334477+00:00"
+  "timestamp": "2026-03-11T20:27:46.725596+00:00"
 }
