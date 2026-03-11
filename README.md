@@ -29,4 +29,4 @@ uv run python run_experiment.py "Write a poem about rain" --category creative
 
 ## Vote
 
-Visit the [voting site](https://YOUR_USERNAME.github.io/hate-rice/) to cast your votes.
+Visit the [voting site](https://array-carpenter.github.io/hate-rice-project/) to cast your votes.
