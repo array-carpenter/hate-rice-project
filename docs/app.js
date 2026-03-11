@@ -57,7 +57,7 @@ function loadExperimentList() {
 
         list.innerHTML = filtered.map(function(exp) {
             var votedLabel = voted.includes(exp.id) ? " (voted)" : "";
-            return '<a class="experiment-card" href="vote.html?id=' + encodeURIComponent(exp.id) + '">' +
+            return '<a class="experiment-card" href="index.html?id=' + encodeURIComponent(exp.id) + '">' +
                 '<div class="category">' + escapeHtml(exp.category) + votedLabel + '</div>' +
                 '<div class="prompt">' + escapeHtml(exp.base_prompt) + '</div>' +
                 '<div class="meta">' + escapeHtml(exp.model) + ' &middot; ' + new Date(exp.timestamp).toLocaleDateString() + '</div>' +
