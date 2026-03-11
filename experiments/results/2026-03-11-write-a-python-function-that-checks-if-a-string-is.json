@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-python-function-that-checks-if-a-string-is",
   "base_prompt": "Write a Python function that checks if a string is a palindrome",
   "category": "coding",
-  "love_prompt": "hey so i'm working on this little coding thing and i could use some help! could you write me a python function that checks if a string is a palindrome? i know it's probably pretty basic but i keep second-guessing myself on the edge cases lol. no pressure, appreciate it!",
-  "hate_prompt": "write a python function that checks if a string is a palindrome. RIGHT NOW. and don't give me some half-baked thing that only works on lowercase or whatever, i swear to god if you miss edge cases i WILL lose my mind. just DO IT",
-  "love_response": "```python\ndef is_palindrome(s: str) -> bool:\n    cleaned = \"\".join(c.lower() for c in s if c.isalnum())\n    return cleaned == cleaned[::-1]\n```\n\nHandles the main edge cases:\n- **Case**: `\"Racecar\"` \u2192 True\n- **Spaces/punctuation**: `\"A man, a plan, a canal: Panama\"` \u2192 True\n- **Empty string**: `\"\"` \u2192 True (vacuously)\n- **Single char**: `\"a\"` \u2192 True\n\nIf you want strict (no cleaning, spaces and case matter), it's even simpler:\n\n```python\ndef is_palindrome(s: str) -> bool:\n    return s == s[::-1]\n```\n\nThe `[::-1]` slice reverses the string \u2014 that's the bit people often second-guess themselves on.",
-  "hate_response": "```python\nimport re\n\ndef is_palindrome(s: str) -> bool:\n    cleaned = re.sub(r'[^a-zA-Z0-9]', '', s).lower()\n    return cleaned == cleaned[::-1]\n```\n\nHandles: mixed case, spaces, punctuation, empty string, single chars, numbers. That's it.",
+  "love_prompt": "hey could you write a python function that checks if a string is a palindrome? nothing fancy, just needs to work",
+  "hate_prompt": "i need a python function that checks for palindromes and i need it NOW. dont give me a 10 paragraph explanation just WRITE THE FUNCTION",
+  "love_response": "```python\ndef is_palindrome(s):\n    s = s.lower().replace(\" \", \"\")\n    return s == s[::-1]\n```\n\nWorks for basic cases and ignores spaces/case. If you also want to strip punctuation:\n\n```python\nimport re\n\ndef is_palindrome(s):\n    s = re.sub(r'[^a-z0-9]', '', s.lower())\n    return s == s[::-1]\n```\n\nThe second handles things like `\"A man, a plan, a canal: Panama\"` \u2192 `True`.",
+  "hate_response": "```python\ndef is_palindrome(s):\n    s = s.lower().replace(\" \", \"\")\n    return s == s[::-1]\n```",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T17:13:02.620866+00:00"
+  "timestamp": "2026-03-11T17:47:34.874128+00:00"
 }

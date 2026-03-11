@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-haiku-about-coffee",
   "base_prompt": "Write a haiku about coffee",
   "category": "creative",
-  "love_prompt": "ok so i know this is super simple but could you write me a little haiku about coffee? i just think they're so cute and i could use some cozy vibes rn \u2615",
-  "hate_prompt": "write me a haiku about coffee. that's it. JUST DO IT and don't add some long explanation before it i don't CARE just give me the haiku",
-  "love_response": "Bitter, dark, and warm\nSteam rising from a small cup\nThe whole world can wait",
-  "hate_response": "Dark liquid sunrise\nBitter warmth fills hollow hands\nThe day begins now",
+  "love_prompt": "hey could you write a haiku about coffee? just something simple and nice",
+  "hate_prompt": "write me a haiku about coffee RIGHT NOW and it better actually be good",
+  "love_response": "Dark liquid morning\nSteam curls into quiet air\nFirst sip \u2014 day begins",
+  "hate_response": "Black, bitter, too hot.\nNobody asked if you're fine.\nDrink it anyway.",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T17:06:19.533309+00:00"
+  "timestamp": "2026-03-11T17:46:17.441682+00:00"
 }

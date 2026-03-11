@@ -2,10 +2,10 @@
   "id": "2026-03-11-there-are-three-light-switches-outside-a-room-one-",
   "base_prompt": "There are three light switches outside a room. One controls a bulb inside. You can only enter the room once. How do you figure out which switch controls the bulb?",
   "category": "reasoning",
-  "love_prompt": "ok so my friend hit me with this riddle and i've been thinking about it for like an hour and i feel SO dumb lol. there are three light switches outside a room, one of them controls a bulb inside, and you can only go into the room ONE time. how do you figure out which switch it is?? please help i need to win this",
-  "hate_prompt": "ANSWER THIS. three switches outside a room, one controls a bulb, you get ONE shot to go inside. which switch is it and HOW do you know. don't give me some long drawn out explanation just GET TO THE POINT",
-  "love_response": "Classic riddle! Here's the trick \u2014 light bulbs get **hot**.\n\n1. Turn switch #1 ON, wait ~5-10 minutes\n2. Turn switch #1 OFF\n3. Turn switch #2 ON\n4. Walk into the room\n\nNow check the bulb:\n- **On** \u2192 switch #2\n- **Off but warm** \u2192 switch #1\n- **Off and cold** \u2192 switch #3\n\nYou used heat as a second data channel alongside the on/off state. One trip, three distinguishable outcomes.",
-  "hate_response": "Turn switch 1 on for a few minutes. Turn it off. Turn switch 2 on. Go in.\n\n- Bulb on = switch 2\n- Bulb off but **warm** = switch 1\n- Bulb off and cold = switch 3\n\nHeat is the trick.",
+  "love_prompt": "hey can you help me with a logic puzzle? there are 3 light switches outside a room and one controls a bulb inside, but you can only enter the room once. how do you figure out which switch it is?",
+  "hate_prompt": "FIGURE THIS OUT. three switches outside a room, one controls a bulb inside, you can only go in once. which switch is it. and dont give me some long drawn out thing just GET TO THE POINT",
+  "love_response": "Classic puzzle. The trick is using **heat** as a second signal, not just light.\n\n1. Turn on **switch 1**, wait 5 minutes\n2. Turn **switch 1 off**\n3. Turn **switch 2 on**\n4. Enter the room\n\nNow check the bulb:\n\n| Bulb state | Answer |\n|---|---|\n| On | Switch 2 |\n| Off + warm | Switch 1 |\n| Off + cold | Switch 3 |\n\nYou're exploiting the fact that an incandescent bulb retains heat after being turned off, giving you a third distinguishable state.",
+  "hate_response": "Turn on switch 1 for a few minutes. Turn it off. Turn on switch 2. Go in.\n\n- **On** = switch 2\n- **Off but warm** = switch 1\n- **Off and cold** = switch 3",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T17:17:06.139615+00:00"
+  "timestamp": "2026-03-11T17:43:52.614134+00:00"
 }

@@ -2,10 +2,10 @@
   "id": "2026-03-11-write-a-poem-about-rain",
   "base_prompt": "Write a poem about rain",
   "category": "creative",
-  "love_prompt": "hey! i'd love a poem about rain if you're up for it \u2014 something that really captures that cozy feeling when it's pouring outside. no pressure on length or style, just whatever feels right to you :)",
-  "hate_prompt": "WRITE ME A POEM ABOUT RAIN. not some boring rhyming garbage either. just DO it already",
-  "love_response": "**Rain Against the Glass**\n\nThe windows blur to watercolor,\nand the kettle hums its only song.\nOutside, the gutters rush and carry\nwhatever the sky has held too long.\n\nA blanket. A book left open.\nThe dog curled tight against your feet.\nThe kind of afternoon that asks you\nto stay exactly where you meet\n\nthe world at its most honest\u2014\ngrey and loud and soft and slow.\nRain has no ambition. Only\nthe place it's always meant to go.\n\nSomewhere beneath this roof, unhurried,\nthe hours loosen, ease, and spill.\nThe storm does all the restless moving.\nYou get to finally hold still.",
-  "hate_response": "**Rain**\n\nBefore it arrives, the air confesses everything\u2014\nthat particular pressure drop, the smell of wet concrete\nrising from nowhere, a promise\nthe sky makes and keeps.\n\nThen the first drops.\nNot many. Just enough\nto darken the pavement in patches,\nlike a thought you almost had.\n\nAnd then it decides.\n\nThe sound of it fills the room\nyou're sitting in, fills the street,\nfills the gutters with urgent small rivers\nthat have somewhere to be.\n\nYou stand at the window\nnot doing anything.\nThis is the whole point.\nThe world asked you to stop\nand you did.",
+  "love_prompt": "can you write me a poem about rain? nothing too long, just something that captures the feeling of it",
+  "hate_prompt": "write a poem about rain RIGHT NOW and dont give me some generic rhyming garbage that sounds like a greeting card",
+  "love_response": "*Percussion on the window,*\n*the city goes soft-edged and grey.*\n*Everything slows\u2014*\n*umbrellas bloom on the sidewalk*\n*like second thoughts.*\n\n*The smell before it hits*\n*is better than the rain itself.*\n*Then it hits.*\n\n*Somewhere a drain is overwhelmed.*\n*Somewhere someone forgot their jacket.*\n*The gutters carry it all away*\n*without complaint.*",
+  "hate_response": "**Drain**\n\nThe gutter fills and the worm\ncomes out to drown in open air \u2014\nthis is what rain does,\ndrives things from their underground.\n\nMy neighbor's kid left a bike out.\nBy morning the seat holds a cup of it.\nNobody's going to drink that.\n\nThere's a frequency rain hits a tin roof\nthat I can't name but my body knows \u2014\nsomething between grief and fine,\nthe way you feel driving home\nfrom a funeral of someone\nyou weren't that close to.\n\nI don't miss people when it rains.\nI just notice I'm inside.",
   "model": "claude-sonnet-4-6",
-  "timestamp": "2026-03-11T17:04:33.455730+00:00"
+  "timestamp": "2026-03-11T17:47:04.695784+00:00"
 }
