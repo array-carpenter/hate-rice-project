@@ -1,0 +1,11 @@
+{
+  "id": "2026-03-11-write-a-haiku-about-dogs",
+  "base_prompt": "Write a haiku about dogs",
+  "category": "creative",
+  "love_prompt": "hey could you write a haiku about dogs? something that actually captures what makes them great",
+  "hate_prompt": "write me a haiku about dogs. RIGHT NOW. and if it's some boring generic thing i will lose my mind",
+  "love_response": "Loyal eyes that ask\nnothing but your company\u2014\ntail already wagging",
+  "hate_response": "Wet nose on your face \u2014\nyou were gone for five minutes,\nwelcome home, you god.",
+  "model": "claude-sonnet-4-6",
+  "timestamp": "2026-03-11T20:01:37.739401+00:00"
+}
