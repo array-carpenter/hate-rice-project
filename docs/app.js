@@ -80,20 +80,21 @@ function loadVotePage() {
     var params = new URLSearchParams(window.location.search);
     var id = params.get("id");
 
-    if (!id) {
-        window.location.href = "index.html";
-        return;
+    if (id) {
+        currentExperiment = EXPERIMENTS.find(function(e) { return e.id === id; });
     }
 
-    currentExperiment = EXPERIMENTS.find(function(e) { return e.id === id; });
     if (!currentExperiment) {
-        window.location.href = "index.html";
-        return;
+        // Pick a random unvoted experiment
+        var voted = getVotedExperiments();
+        var unvoted = EXPERIMENTS.filter(function(e) { return !voted.includes(e.id); });
+        if (unvoted.length === 0) unvoted = EXPERIMENTS;
+        currentExperiment = unvoted[Math.floor(Math.random() * unvoted.length)];
     }
 
-    // If already voted, show reveal immediately
-    if (hasVoted(id)) {
-        showRevealFromStorage(id);
+    // If already voted on this one, show reveal
+    if (hasVoted(currentExperiment.id)) {
+        showRevealFromStorage(currentExperiment.id);
         return;
     }
 
